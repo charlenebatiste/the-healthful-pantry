@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Footer from './components/Footer'
+import NotFoundPage from './components/NotFoundPage'
 
 
 // Private route component
@@ -67,6 +68,10 @@ function App() {
                 <Route path='/signup' component={Signup} />
                 <Route path='/login'
                     render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
+<<<<<<< HEAD
+                <Route path="*" component={NotFoundPage} />
+=======
+>>>>>>> cb1219edbc39953fdf521cbdbe5d95f552edc0ba
             </Switch>
             <Footer />
 
