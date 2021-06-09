@@ -69,9 +69,7 @@ function App() {
             <div className="container mt-5">
                 <Switch>
                     {/* routes will go inside of here */}
-                    <Route exact path="/" component={Home} />
                     <Route path='/signup' component={Signup} />
-                    <Route exact path='/' component={ Welcome } />
                     <Route path='/login'
                         render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
                 </Switch>
