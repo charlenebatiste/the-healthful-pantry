@@ -1,19 +1,9 @@
-<<<<<<< HEAD
-.row {
-=======
 .signup__wrapper {
->>>>>>> cb1219edbc39953fdf521cbdbe5d95f552edc0ba
 	background-image: url("../img/greens.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-<<<<<<< HEAD
-}
-.signup__wrapper {
-	margin: 0;
-}
-=======
 	margin: 0;
 }
 
@@ -29,4 +19,3 @@
 .login {
 	color: #1f4f46;
 }
->>>>>>> cb1219edbc39953fdf521cbdbe5d95f552edc0ba
