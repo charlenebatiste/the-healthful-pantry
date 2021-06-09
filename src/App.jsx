@@ -21,6 +21,7 @@ import Login from "./components/Login";
 import Footer from "./components/Footer";
 // Pages
 import Home from "./pages/Home";
+import NotFoundPage from "./components/NotFoundPage";
 
 // Private route component
 const PrivateRoute = ({
@@ -123,6 +124,10 @@ function App() {
 							}
 						/>
 					)}
+				/>
+				<Route
+					path="*"
+					component={NotFoundPage}
 				/>
 			</Switch>
 			<Footer />
