@@ -1,29 +1,20 @@
-import React from "react";
-import clsx from "clsx";
+import React, { useState } from "react";
 import {
 	makeStyles,
-	useTheme,
-} from "@material-ui/core/styles";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import ListItemText from "@material-ui/core/ListItemText";
-import Select from "@material-ui/core/Select";
-import Checkbox from "@material-ui/core/Checkbox";
+	Input,
+	InputLabel,
+	MenuItem,
+	FormControl,
+	ListItemText,
+	Select,
+	Checkbox,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
 	formControl: {
 		margin: theme.spacing(1),
 		minWidth: 120,
 		maxWidth: 300,
-	},
-	chips: {
-		display: "flex",
-		flexWrap: "wrap",
-	},
-	chip: {
-		margin: 2,
 	},
 	noLabel: {
 		marginTop: theme.spacing(3),
@@ -43,39 +34,51 @@ const MenuProps = {
 	},
 };
 
-const names = [
-	"Oliver Hansen",
-	"Van Henry",
-	"April Tucker",
-	"Ralph Hubbard",
-	"Omar Alexander",
-	"Carlos Abbott",
-	"Miriam Wagner",
-	"Bradley Wilkerson",
-	"Virginia Andrews",
-	"Kelly Snyder",
+const intolerances = [
+	"dairy",
+	"egg",
+	"gluten",
+	"peanut",
+	"sesame",
+	"seafood",
+	"shellfish",
+	"soy",
+	"sulfite",
+	"tree nut",
+	"wheat",
 ];
 
-function getStyles(name, personName, theme) {
-	return {
-		fontWeight:
-			personName.indexOf(name) === -1
-				? theme.typography
-						.fontWeightRegular
-				: theme.typography
-						.fontWeightMedium,
-	};
-}
+const diets = [
+	"pescetarian",
+	"lacto vegetarian",
+	"ovo vegetarian",
+	"vegan",
+	"paleo",
+	"primal",
+	"vegetarian",
+];
+
+const conditions = [
+	"Diabetes",
+	"Anemia",
+	"Cancer",
+	"Heart Disease / Heart Failure",
+	"Epilepsy ",
+	"IBD or Stomach Cancer",
+];
 
 const Search = () => {
 	const classes = useStyles();
-	const theme = useTheme();
-	const [personName, setPersonName] =
-		React.useState([]);
+	const [userIntolerance, setUserIntolerance] =
+		useState([]);
+	const [userDiet, setUserDiet] = useState([]);
+	const [userCondition, setUserCondition] =
+		useState([]);
 
 	const handleChange = (event) => {
-		setPersonName(event.target.value);
+		setUserIntolerance(event.target.value);
 	};
+	// buggy because this is currently only setting user intolerance and not anything else
 
 	const handleChangeMultiple = (event) => {
 		const { options } = event.target;
@@ -89,99 +92,183 @@ const Search = () => {
 				value.push(options[i].value);
 			}
 		}
-		setPersonName(value);
+		setUserIntolerance(value);
 	};
+	// will work for all of the input fields
 
 	return (
 		<div>
-			<FormControl
-				className={classes.formControl}
-			>
-				<InputLabel id="intolerance-checkbox-label">
-					Intolerances
-				</InputLabel>
-				<Select
-					labelId="intolerance-checkbox-label"
-					id="intolerance-checkbox"
-					multiple
-					value={personName}
-					onChange={handleChange}
-					input={<Input />}
-					renderValue={(selected) =>
-						selected.join(", ")
-					}
-					MenuProps={MenuProps}
-				>
-					{names.map((name) => (
-						<MenuItem
-							key={name}
-							value={name}
-						>
-							<Checkbox
-								checked={
-									personName.indexOf(
-										name
-									) > -1
-								}
-							/>
-							<ListItemText
-								primary={name}
-							/>
-						</MenuItem>
-					))}
-				</Select>
-			</FormControl>
-			<FormControl
-				className={clsx(
-					classes.formControl,
-					classes.noLabel
-				)}
-			>
-				<Select
-					multiple
-					displayEmpty
-					value={personName}
-					onChange={handleChange}
-					input={<Input />}
-					renderValue={(selected) => {
-						if (
-							selected.length === 0
-						) {
-							return (
-								<em>
-									Placeholder
-								</em>
-							);
+			<div className="search__wrapper">
+				<div className="search__header">
+					<h1>Search</h1>
+					<h2>
+						Please check all boxes
+						that apply so we can
+						provide you with the best
+						results
+					</h2>
+				</div>
+				<hr></hr>
+				<form className="form__wrapper">
+					<FormControl
+						className={
+							classes.formControl
 						}
-
-						return selected.join(
-							", "
-						);
-					}}
-					MenuProps={MenuProps}
-					inputProps={{
-						"aria-label":
-							"Without label",
-					}}
-				>
-					<MenuItem disabled value="">
-						<em>Placeholder</em>
-					</MenuItem>
-					{names.map((name) => (
-						<MenuItem
-							key={name}
-							value={name}
-							style={getStyles(
-								name,
-								personName,
-								theme
-							)}
+					>
+						<InputLabel id="intolerance-checkbox-label">
+							Intolerances
+						</InputLabel>
+						<Select
+							labelId="intolerance-checkbox-label"
+							id="intolerance-checkbox"
+							multiple
+							value={
+								userIntolerance
+							}
+							onChange={
+								handleChange
+							}
+							input={<Input />}
+							renderValue={(
+								selected
+							) =>
+								selected.join(
+									", "
+								)
+							}
+							MenuProps={MenuProps}
 						>
-							{name}
-						</MenuItem>
-					))}
-				</Select>
-			</FormControl>
+							{intolerances.map(
+								(intolerance) => (
+									<MenuItem
+										key={
+											intolerance
+										}
+										value={
+											intolerance
+										}
+									>
+										<Checkbox
+											checked={
+												userIntolerance.indexOf(
+													intolerance
+												) >
+												-1
+											}
+										/>
+										<ListItemText
+											primary={
+												intolerance
+											}
+										/>
+									</MenuItem>
+								)
+							)}
+						</Select>
+					</FormControl>
+					<FormControl
+						className={
+							classes.formControl
+						}
+					>
+						<InputLabel id="diet-checkbox-label">
+							Diet
+						</InputLabel>
+						<Select
+							labelId="diet-checkbox-label"
+							id="diet-checkbox"
+							multiple
+							value={userDiet}
+							onChange={
+								handleChange
+							}
+							input={<Input />}
+							renderValue={(
+								selected
+							) =>
+								selected.join(
+									", "
+								)
+							}
+							MenuProps={MenuProps}
+						>
+							{diets.map((diet) => (
+								<MenuItem
+									key={diet}
+									value={diet}
+								>
+									<Checkbox
+										checked={
+											userDiet.indexOf(
+												diet
+											) > -1
+										}
+									/>
+									<ListItemText
+										primary={
+											diet
+										}
+									/>
+								</MenuItem>
+							))}
+						</Select>
+					</FormControl>
+					<FormControl
+						className={
+							classes.formControl
+						}
+					>
+						<InputLabel id="condition-checkbox-label">
+							Conditions
+						</InputLabel>
+						<Select
+							labelId="condition-checkbox-label"
+							id="condition-checkbox"
+							multiple
+							value={userCondition}
+							onChange={
+								handleChange
+							}
+							input={<Input />}
+							renderValue={(
+								selected
+							) =>
+								selected.join(
+									", "
+								)
+							}
+							MenuProps={MenuProps}
+						>
+							{conditions.map(
+								(condition) => (
+									<MenuItem
+										key={
+											condition
+										}
+										value={
+											condition
+										}
+									>
+										<Checkbox
+											checked={
+												userCondition.indexOf(
+													condition
+												) >
+												-1
+											}
+										/>
+										<ListItemText
+											primary={
+												condition
+											}
+										/>
+									</MenuItem>
+								)
+							)}
+						</Select>
+					</FormControl>
+				</form>
+			</div>
 		</div>
 	);
 };
