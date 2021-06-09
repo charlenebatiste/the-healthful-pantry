@@ -25,6 +25,9 @@ const Navbar = (props) => {
                                     <NavLink className="nav-link" to="/cart">Shopping Cart</NavLink>
                                 </li> */}
                                 <li className="nav-item">
+                                    <NavLink className="nav-link" to="/myrecipes">My Recipes</NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/profile">Profile</NavLink>
                                 </li>
                                 <li className="nav-item">
