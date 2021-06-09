@@ -64,27 +64,33 @@ const Signup = () => {
     return (
 
         <div className="signup__wrapper row pt-5 pb-5">
-            <div className="signup__content col-md-7 offset-md-3 my-5">
+            <div className="signup__content col-md-5 offset-md-4 my-5">
                 <div className="card card-body">
-                    <h2 className="py-2">Signup</h2>
+                    <h2 className="card__title mx-4 my-4">Signup</h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="form-group my-2 mx-4">
                             <label htmlFor="name">Name</label>
                             <input type="text" name="name" value={name} onChange={handleInput} className="form-control" />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group my-2 mx-4">
                             <label htmlFor="email">Email</label>
                             <input type="email" name="email" value={email} onChange={handleInput} className="form-control" />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group my-2 mx-4">
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password" value={password} onChange={handleInput} className="form-control" />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group my-2 mx-4">
                             <label htmlFor="confirmPassword">Confirm Password</label>
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleInput} className="form-control" />
                         </div>
-                        <button type="submit" className="btn btn-primary float-right">Submit</button>
+                        <div className="d-grid col-6 mx-auto text-center">
+                            <button type="submit" className="btn my-3">Submit</button>
+                        </div>
+                        <div className="card__reroute row my-2">
+                            <p className="col-7 offset-1">Already have an account?</p>
+                            <a className="login" href="/login">Log in</a>
+                        </div>
                     </form>
                 </div>
             </div>

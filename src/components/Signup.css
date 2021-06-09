@@ -1,10 +1,21 @@
-.row {
+.signup__wrapper {
 	background-image: url("../img/greens.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-}
-.signup__wrapper {
 	margin: 0;
+}
+
+.card {
+	border-radius: 0.8em;
+}
+
+.btn {
+	background-color: #1f4f46;
+	color: #ffff99;
+}
+
+.login {
+	color: #1f4f46;
 }
