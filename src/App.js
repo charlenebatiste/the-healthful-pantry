@@ -9,6 +9,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import About from './components/About'
 
 // Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -57,6 +58,7 @@ function App() {
     return (
         <div className="App">
             <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
+            <About />
             <div className="container mt-5">
                 <Switch>
                     {/* routes will go inside of here */}
