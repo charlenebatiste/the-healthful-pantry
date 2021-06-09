@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Footer from './components/Footer'
 
+
 // Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
     console.log('This is a private route...')
@@ -65,9 +66,7 @@ function App() {
             <div className="container mt-5">
                 <Switch>
                     {/* routes will go inside of here */}
-                    <Route exact path="/" component={Home} />
                     <Route path='/signup' component={Signup} />
-                  
                     <Route path='/login'
                         render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
                 </Switch>
