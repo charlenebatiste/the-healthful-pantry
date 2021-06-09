@@ -7,9 +7,10 @@ import setAuthToken from './utils/setAuthToken';
 import './App.css';
 // Components
 import Navbar from './components/Navbar';
+// Pages
+import Home from './pages/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import About from './components/About'
 import Footer from './components/Footer'
 
 // Private route component
@@ -59,11 +60,12 @@ function App() {
     return (
         <div className="App">
             <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
-            <About />
+            <Home />
             <Footer />
             <div className="container mt-5">
                 <Switch>
                     {/* routes will go inside of here */}
+                    <Route exact path="/" component={Home} />
                     <Route path='/signup' component={Signup} />
                     <Route path='/login'
                         render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
