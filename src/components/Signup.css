@@ -1,0 +1,10 @@
+.row {
+	background-image: url("../img/greens.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+.signup__wrapper {
+	margin: 0;
+}
