@@ -7,5 +7,4 @@ const HowItWorks = () => {
 		</div>
 	);
 };
-
 export default HowItWorks;
