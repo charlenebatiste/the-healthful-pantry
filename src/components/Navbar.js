@@ -14,7 +14,7 @@ const Navbar = (props) => {
                             <NavLink className="nav-link" to="/search">Search Recipes</NavLink>
                         </li>
                     </ul>
-                    <div className="navbar-brand"><p>The Healthful Pantry</p></div>
+                    <NavLink className="navbar-brand nav-link" to="/"><p>The Healthful Pantry</p></NavLink>
                     {
                         props.isAuth
                             ? <ul className="navbar-nav ml-auto">
