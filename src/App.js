@@ -68,10 +68,7 @@ function App() {
                 <Route path='/signup' component={Signup} />
                 <Route path='/login'
                     render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
-<<<<<<< HEAD
-                <Route path="*" component={NotFoundPage} />
-=======
->>>>>>> cb1219edbc39953fdf521cbdbe5d95f552edc0ba
+             <Route path="*" component={NotFoundPage} />
             </Switch>
             <Footer />
 
