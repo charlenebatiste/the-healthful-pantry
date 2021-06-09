@@ -9,6 +9,11 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Welcome from './components/Welcome';
+
+
+
+ 
 
 // Private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -61,6 +66,7 @@ function App() {
                 <Switch>
                     {/* routes will go inside of here */}
                     <Route path='/signup' component={Signup} />
+                    <Route exact path='/' component={ Welcome } />
                     <Route path='/login'
                         render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
                 </Switch>
