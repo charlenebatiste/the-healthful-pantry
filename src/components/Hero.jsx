@@ -3,12 +3,17 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <div className="hero-image">
-        <div className="hero-text">
-          <h1>I am John Doe</h1>
-          <p>And I'm a Photographer</p>
-          <button>Hire me</button>
-        </div>
+        <div className="jumbotron">
+      
+        <div className="container-md">
+          <h1 className="display-4">Health, made tasty. </h1>
+          <p className="lead">Welcome to Healthful Pantry and start your journey to health freedom today!</p>
+          
+        <p>Eat your way back to health and fight back from chronic illnes and disease. </p>
+        <p className="lead">
+         <a className="btn btn-primary btn-lg" href="#" role="button">Get Started!</a>
+        </p>
+         </div>
       </div>
    
     )
