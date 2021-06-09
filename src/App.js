@@ -11,9 +11,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
-
-
-
 import Footer from './components/Footer'
 
 
