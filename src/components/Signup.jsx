@@ -64,11 +64,7 @@ const Signup = () => {
     return (
 
         <div className="signup__wrapper row pt-5 pb-5">
-<<<<<<< HEAD
-            <div className="signup__content col-md-7 offset-md-3 my-5">
-=======
             <div className="signup__content col-md-5 offset-md-4 my-5">
->>>>>>> cb1219edbc39953fdf521cbdbe5d95f552edc0ba
                 <div className="card card-body">
                     <h2 className="card__title mx-4 my-4">Signup</h2>
                     <form onSubmit={handleSubmit}>
