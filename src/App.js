@@ -64,16 +64,15 @@ function App() {
     return (
         <div className="App">
             <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
-            <Home />
+            <Switch>
+                {/* routes below */}
+                <Route exact path='/' component={Home} />
+                <Route path='/signup' component={Signup} />
+                <Route path='/login'
+                    render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
+            </Switch>
             <Footer />
-            <div className="container mt-5">
-                <Switch>
-                    {/* routes will go inside of here */}
-                    <Route path='/signup' component={Signup} />
-                    <Route path='/login'
-                        render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} />} />
-                </Switch>
-            </div>
+
         </div>
     );
 }
