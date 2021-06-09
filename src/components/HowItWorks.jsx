@@ -5,7 +5,7 @@ const HowItWorks = () => {
         <div>
             <h1>HowItWorks</h1>
 
-        </div >
+        </div>
     )
 }
 
