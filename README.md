@@ -20,14 +20,14 @@ The Healthful Pantry is a fullstack MERN app that strives to provide users with 
 
 ## Default Routes
 
-| Method | Path         | Location  | Purpose             |
-| ------ | ------------ | --------- | ------------------- |
-| GET    | /            | server.js | App Homepage        |
-| GET    | /\*          | server.js | 404 Page            |
-| GET    | /auth/login  | auth.js   | Login Page          |
-| GET    | /auth/signup | auth.js   | Signup Page         |
-| GET    | /search      | server.js | Search Page         |
-| POST   | /result      | server.js | Search Results Page |
+| Method | Path         | Purpose             |
+| ------ | ------------ | ------------------- |
+| GET    | /            | App Homepage        |
+| GET    | /\*          | 404 Page            |
+| GET    | /auth/login  | Login Page          |
+| GET    | /auth/signup | Signup Page         |
+| GET    | /search      | Search Page         |
+| POST   | /result      | Search Results Page |
 
 ## Status
 
