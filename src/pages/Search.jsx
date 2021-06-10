@@ -78,57 +78,74 @@ const Search = () => {
 	};
 
 	return (
-		<div>
-			<div className="search__wrapper">
-				<div className="search__header">
-					<h1>Search</h1>
-					<h2>
-						Please check all boxes
-						that apply so we can
-						provide you with the best
-						results
-					</h2>
+		<div className="search__container container-fluid">
+			<div className="search__wrapper row">
+				<div className="search__heading col mt-5 mb-2">
+					<h1 className="heading__header text-center m-3">
+						Search Recipes
+					</h1>
+					<p className="heading__info text-center m-3">
+						<em>
+							Please select all that
+							apply so that we can
+							provide you with the
+							best results.
+						</em>
+					</p>
 				</div>
-				<hr></hr>
-				<div className="card">
+			</div>
+			<div className="search__content row d-flex justify-content-center">
+				<div className="card col-8 my-5">
 					<form
-						className="form__wrapper"
+						className="form__wrapper text-center my-4"
 						onSubmit={handleSubmit}
 					>
-						<FormField
-							labelId="intolerance-checkbox-label"
-							inputLabelDisplay="Intolerance"
-							id="intolerance-checkbox"
-							selectValue={
-								userIntolerance
-							}
-							selectOnChange={
-								handleIntolerance
-							}
-							option={intolerances}
-						/>
-						<FormField
-							labelId="diet-checkbox-label"
-							inputLabelDisplay="Diet"
-							id="diet-checkbox"
-							selectValue={userDiet}
-							selectOnChange={
-								handleDiet
-							}
-							option={diets}
-						/>
-						<FormField
-							labelId="condition-checkbox-label"
-							inputLabelDisplay="Condition"
-							id="condition-checkbox"
-							selectValue={
-								userCondition
-							}
-							selectOnChange={
-								handleCondition
-							}
-							option={conditions}
-						/>
+						<div className="form__group my-4">
+							<FormField
+								labelId="intolerance-checkbox-label"
+								inputLabelDisplay="Intolerances"
+								id="intolerance-checkbox"
+								selectValue={
+									userIntolerance
+								}
+								selectOnChange={
+									handleIntolerance
+								}
+								option={
+									intolerances
+								}
+							/>
+						</div>
+						<div className="form__group my-4">
+							<FormField
+								labelId="diet-checkbox-label"
+								inputLabelDisplay="Diet Type"
+								id="diet-checkbox"
+								selectValue={
+									userDiet
+								}
+								selectOnChange={
+									handleDiet
+								}
+								option={diets}
+							/>
+						</div>
+						<div className="form__group my-4">
+							<FormField
+								labelId="condition-checkbox-label"
+								inputLabelDisplay="Health Conditions"
+								id="condition-checkbox"
+								selectValue={
+									userCondition
+								}
+								selectOnChange={
+									handleCondition
+								}
+								option={
+									conditions
+								}
+							/>
+						</div>
 						<button
 							type="submit"
 							className="btn my-3"
