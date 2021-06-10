@@ -126,11 +126,12 @@ function App() {
 						/>
 					)}
 				/>
+				<Route path='/profile' component={ Profile } user={currentUser} handleLogout={handleLogout} />
 				<Route
 					path="*"
 					component={NotFoundPage}
 				/>
-				 <PrivateRoute path='/profile' component={ Profile } user={currentUser} handleLogout={handleLogout} />
+				 
 			</Switch>
 			<Footer />
 		</div>
