@@ -6,12 +6,21 @@ import "./css/FavoritesCards.css";
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      padding: '0 50px 0 50px',
+      // margin: theme.spacing(0)
     },
     paper: {
       padding: theme.spacing(7),
       textAlign: 'center',
       color: theme.palette.text.secondary,
     //   margin: theme.spacing(1, 'auto'),
+    },
+    gridWrapper: {
+      border: "1px solid grey",
+      display: "grid",
+      backgroundColor: "grey",
+      gridRowGap: 1,
+      gridColumnGap: 1,
     },
   }));
   
