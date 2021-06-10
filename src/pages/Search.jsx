@@ -1,41 +1,9 @@
 import React, { useState } from "react";
-import {
-	makeStyles,
-	Input,
-	InputLabel,
-	MenuItem,
-	FormControl,
-	ListItemText,
-	Select,
-	Checkbox,
-} from "@material-ui/core";
+import FormField from "../components/FormField";
+import "../components/css/Search.css";
 import axios from "axios";
 const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
-
-const useStyles = makeStyles((theme) => ({
-	formControl: {
-		margin: theme.spacing(1),
-		minWidth: 120,
-		maxWidth: 300,
-	},
-	noLabel: {
-		marginTop: theme.spacing(3),
-	},
-}));
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-	PaperProps: {
-		style: {
-			maxHeight:
-				ITEM_HEIGHT * 4.5 +
-				ITEM_PADDING_TOP,
-			width: 250,
-		},
-	},
-};
 
 const intolerances = [
 	"dairy",
@@ -74,7 +42,6 @@ const conditions = [
 ];
 
 const Search = () => {
-	const classes = useStyles();
 	const [userIntolerance, setUserIntolerance] =
 		useState([]);
 	const [userDiet, setUserDiet] = useState([]);
@@ -111,184 +78,82 @@ const Search = () => {
 	};
 
 	return (
-		<div>
-			<div className="search__wrapper">
-				<div className="search__header">
-					<h1>Search</h1>
-					<h2>
-						Please check all boxes
-						that apply so we can
-						provide you with the best
-						results
-					</h2>
+		<div className="search__container container-fluid">
+			<div className="search__wrapper row">
+				<div className="search__heading col mt-5 mb-2">
+					<h1 className="heading__header text-center m-3">
+						Search Recipes
+					</h1>
+					<p className="heading__info text-center m-3">
+						<em>
+							Please select all that
+							apply so that we can
+							provide you with the
+							best results.
+						</em>
+					</p>
 				</div>
-				<hr></hr>
-				<form
-					className="form__wrapper"
-					onSubmit={handleSubmit}
-				>
-					<FormControl
-						className={
-							classes.formControl
-						}
+			</div>
+			<div className="search__content row d-flex justify-content-center">
+				<div className="card col-8 my-5">
+					<form
+						className="form__wrapper text-center my-4"
+						onSubmit={handleSubmit}
 					>
-						<InputLabel id="intolerance-checkbox-label">
-							Intolerances
-						</InputLabel>
-						<Select
-							labelId="intolerance-checkbox-label"
-							id="intolerance-checkbox"
-							multiple
-							value={
-								userIntolerance
-							}
-							onChange={
-								handleIntolerance
-							}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
+						<div className="form__group my-4">
+							<FormField
+								labelId="intolerance-checkbox-label"
+								inputLabelDisplay="Intolerances"
+								id="intolerance-checkbox"
+								selectValue={
+									userIntolerance
+								}
+								selectOnChange={
+									handleIntolerance
+								}
+								option={
+									intolerances
+								}
+							/>
+						</div>
+						<div className="form__group my-4">
+							<FormField
+								labelId="diet-checkbox-label"
+								inputLabelDisplay="Diet Type"
+								id="diet-checkbox"
+								selectValue={
+									userDiet
+								}
+								selectOnChange={
+									handleDiet
+								}
+								option={diets}
+							/>
+						</div>
+						<div className="form__group my-4">
+							<FormField
+								labelId="condition-checkbox-label"
+								inputLabelDisplay="Health Conditions"
+								id="condition-checkbox"
+								selectValue={
+									userCondition
+								}
+								selectOnChange={
+									handleCondition
+								}
+								option={
+									conditions
+								}
+							/>
+						</div>
+						<button
+							type="submit"
+							className="btn my-3"
 						>
-							{intolerances.map(
-								(intolerance) => (
-									<MenuItem
-										key={
-											intolerance
-										}
-										value={
-											intolerance
-										}
-									>
-										<Checkbox
-											checked={
-												userIntolerance.indexOf(
-													intolerance
-												) >
-												-1
-											}
-										/>
-										<ListItemText
-											primary={
-												intolerance
-											}
-										/>
-									</MenuItem>
-								)
-							)}
-						</Select>
-					</FormControl>
-					<FormControl
-						className={
-							classes.formControl
-						}
-					>
-						<InputLabel id="diet-checkbox-label">
-							Diet
-						</InputLabel>
-						<Select
-							labelId="diet-checkbox-label"
-							id="diet-checkbox"
-							multiple
-							value={userDiet}
-							onChange={handleDiet}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
-						>
-							{diets.map((diet) => (
-								<MenuItem
-									key={diet}
-									value={diet}
-								>
-									<Checkbox
-										checked={
-											userDiet.indexOf(
-												diet
-											) > -1
-										}
-									/>
-									<ListItemText
-										primary={
-											diet
-										}
-									/>
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-					<FormControl
-						className={
-							classes.formControl
-						}
-					>
-						<InputLabel id="condition-checkbox-label">
-							Conditions
-						</InputLabel>
-						<Select
-							labelId="condition-checkbox-label"
-							id="condition-checkbox"
-							multiple
-							value={userCondition}
-							onChange={
-								handleCondition
-							}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
-						>
-							{conditions.map(
-								(condition) => (
-									<MenuItem
-										key={
-											condition
-										}
-										value={
-											condition
-										}
-									>
-										<Checkbox
-											checked={
-												userCondition.indexOf(
-													condition
-												) >
-												-1
-											}
-										/>
-										<ListItemText
-											primary={
-												condition
-											}
-										/>
-									</MenuItem>
-								)
-							)}
-						</Select>
-					</FormControl>
-					<button
-						type="submit"
-						className="btn my-3"
-					>
-						Submit
-					</button>
-				</form>
+							Submit
+						</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	);
