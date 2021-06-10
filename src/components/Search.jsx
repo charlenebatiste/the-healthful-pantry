@@ -78,23 +78,6 @@ const Search = () => {
 	const handleChange = (event) => {
 		setUserIntolerance(event.target.value);
 	};
-	// buggy because this is currently only setting user intolerance and not anything else
-
-	const handleChangeMultiple = (event) => {
-		const { options } = event.target;
-		const value = [];
-		for (
-			let i = 0, l = options.length;
-			i < l;
-			i += 1
-		) {
-			if (options[i].selected) {
-				value.push(options[i].value);
-			}
-		}
-		setUserIntolerance(value);
-	};
-	// will work for all of the input fields
 
 	return (
 		<div>
