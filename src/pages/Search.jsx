@@ -9,6 +9,7 @@ import {
 	Select,
 	Checkbox,
 } from "@material-ui/core";
+import FormField from "../components/FormField";
 import axios from "axios";
 const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
@@ -72,6 +73,7 @@ const conditions = [
 	"Epilepsy ",
 	"IBD or Stomach Cancer",
 ];
+const tests = ["This", "Is", "A", "Test"];
 
 const Search = () => {
 	const classes = useStyles();
@@ -80,6 +82,7 @@ const Search = () => {
 	const [userDiet, setUserDiet] = useState([]);
 	const [userCondition, setUserCondition] =
 		useState([]);
+	const [userTest, setUserTest] = useState([]);
 
 	const handleIntolerance = (event) => {
 		setUserIntolerance(event.target.value);
@@ -89,6 +92,9 @@ const Search = () => {
 	};
 	const handleCondition = (event) => {
 		setUserCondition(event.target.value);
+	};
+	const handleTest = (event) => {
+		setUserTest(event.target.value);
 	};
 
 	const handleSubmit = (e) => {
@@ -282,6 +288,62 @@ const Search = () => {
 							)}
 						</Select>
 					</FormControl>
+					<FormControl
+						className={
+							classes.formControl
+						}
+					>
+						<InputLabel id="test-checkbox-label">
+							Test
+						</InputLabel>
+						<Select
+							labelId="test-checkbox-label"
+							id="test-checkbox"
+							multiple
+							value={userTest}
+							onChange={handleTest}
+							input={<Input />}
+							renderValue={(
+								selected
+							) =>
+								selected.join(
+									", "
+								)
+							}
+							MenuProps={MenuProps}
+						>
+							{tests.map((test) => (
+								<MenuItem
+									key={test}
+									value={test}
+								>
+									<Checkbox
+										checked={
+											userTest.indexOf(
+												test
+											) > -1
+										}
+									/>
+									<ListItemText
+										primary={
+											test
+										}
+									/>
+								</MenuItem>
+							))}
+						</Select>
+					</FormControl>
+					<FormField
+						labelId="test-checkbox-label"
+						inputLabelDisplay="Test"
+						id="test-checkbox"
+						selectValue={userTest}
+						selectOnChange={
+							handleTest
+						}
+						option="tests"
+						event="test"
+					/>
 					<button
 						type="submit"
 						className="btn my-3"

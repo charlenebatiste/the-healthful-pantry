@@ -34,47 +34,55 @@ const MenuProps = {
 	},
 };
 
-const FormField = () => {
+const FormField = (props) => {
+	const classes = useStyles();
+	const {
+		labelId,
+		inputLabelDisplay,
+		id,
+		selectValue,
+		selectOnChange,
+		option,
+		event,
+	} = props;
 	return (
 		<FormControl
 			className={classes.formControl}
 		>
-			<InputLabel id="intolerance-checkbox-label">
-				Intolerances
+			<InputLabel id={labelId}>
+				{inputLabelDisplay}
 			</InputLabel>
 			<Select
-				labelId="intolerance-checkbox-label"
-				id="intolerance-checkbox"
+				labelId={labelId}
+				id={id}
 				multiple
-				value={userIntolerance}
-				onChange={handleChange}
+				value={selectValue}
+				onChange={selectOnChange}
 				input={<Input />}
 				renderValue={(selected) =>
 					selected.join(", ")
 				}
 				MenuProps={MenuProps}
 			>
-				{intolerances.map(
-					(intolerance) => (
-						<MenuItem
-							key={intolerance}
-							value={intolerance}
-						>
-							<Checkbox
-								checked={
-									userIntolerance.indexOf(
-										intolerance
-									) > -1
-								}
-							/>
-							<ListItemText
-								primary={
-									intolerance
-								}
-							/>
-						</MenuItem>
-					)
-				)}
+				{{ option }.map(({ event }) => (
+					<MenuItem
+						key={{ event }}
+						value={{ event }}
+					>
+						<Checkbox
+							checked={
+								{
+									selectValue,
+								}.indexOf({
+									event,
+								}) > -1
+							}
+						/>
+						<ListItemText
+							primary={{ event }}
+						/>
+					</MenuItem>
+				))}
 			</Select>
 		</FormControl>
 	);
