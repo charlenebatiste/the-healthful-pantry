@@ -7,20 +7,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       padding: '0 50px 0 50px',
-      // margin: theme.spacing(0)
     },
     paper: {
-      padding: theme.spacing(7),
+      padding: theme.spacing(3),
       textAlign: 'center',
       color: theme.palette.text.secondary,
-    //   margin: theme.spacing(1, 'auto'),
-    },
-    gridWrapper: {
-      border: "1px solid grey",
-      display: "grid",
-      backgroundColor: "grey",
-      gridRowGap: 1,
-      gridColumnGap: 1,
     },
   }));
   
@@ -30,15 +21,15 @@ const useStyles = makeStyles((theme) => ({
   
     function FormRow() {
       return (   
-        <React.Fragment>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}><Card/></Paper>
+        <React.Fragment >
+          <Grid align="center" item xs={4} >
+            <Paper className={classes.paper} style={{ border: "none", boxShadow: "none"}}><Card/></Paper>
           </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}><Card/></Paper>
+          <Grid align="center"  item xs={4}>
+            <Paper className={classes.paper} style={{ border: "none", boxShadow: "none" }}><Card/></Paper>
           </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}><Card/></Paper>
+          <Grid align="center"  item xs={4}>
+            <Paper className={classes.paper} style={{ border: "none", boxShadow: "none" }}><Card/></Paper>
           </Grid>
         </React.Fragment>
       );
@@ -46,14 +37,14 @@ const useStyles = makeStyles((theme) => ({
   
     return (
       <div className={classes.root}>
-        <Grid container spacing={1}>
-          <Grid container item xs={12} spacing={3}>
+        <Grid align="center"  container spacing={1}>
+          <Grid container item xs={12} spacing={0}>
             <FormRow />
           </Grid>
-          <Grid container item xs={12} spacing={3}>
+          <Grid align="center" container item xs={12} spacing={0}>
             <FormRow />
           </Grid>
-          <Grid container item xs={12} spacing={3}>
+          <Grid align="center" container item xs={12} spacing={0}>
             <FormRow />
           </Grid>
         </Grid>
