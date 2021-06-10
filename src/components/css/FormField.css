@@ -1,0 +1,11 @@
+.FormControl {
+	background-color: white;
+	width: 80%;
+}
+
+#intolerance-checkbox-label,
+#diet-checkbox-label,
+#condition-checkbox-label {
+	color: #1f4f46;
+	font-size: 1.2em;
+}
