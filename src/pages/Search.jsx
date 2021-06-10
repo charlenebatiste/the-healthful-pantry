@@ -1,42 +1,9 @@
 import React, { useState } from "react";
-import {
-	makeStyles,
-	Input,
-	InputLabel,
-	MenuItem,
-	FormControl,
-	ListItemText,
-	Select,
-	Checkbox,
-} from "@material-ui/core";
 import FormField from "../components/FormField";
+import "../components/css/Search.css";
 import axios from "axios";
 const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
-
-const useStyles = makeStyles((theme) => ({
-	formControl: {
-		margin: theme.spacing(1),
-		minWidth: 120,
-		maxWidth: 300,
-	},
-	noLabel: {
-		marginTop: theme.spacing(3),
-	},
-}));
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-	PaperProps: {
-		style: {
-			maxHeight:
-				ITEM_HEIGHT * 4.5 +
-				ITEM_PADDING_TOP,
-			width: 250,
-		},
-	},
-};
 
 const intolerances = [
 	"dairy",
@@ -73,16 +40,13 @@ const conditions = [
 	"Epilepsy ",
 	"IBD or Stomach Cancer",
 ];
-const tests = ["This", "Is", "A", "Test"];
 
 const Search = () => {
-	const classes = useStyles();
 	const [userIntolerance, setUserIntolerance] =
 		useState([]);
 	const [userDiet, setUserDiet] = useState([]);
 	const [userCondition, setUserCondition] =
 		useState([]);
-	const [userTest, setUserTest] = useState([]);
 
 	const handleIntolerance = (event) => {
 		setUserIntolerance(event.target.value);
@@ -92,9 +56,6 @@ const Search = () => {
 	};
 	const handleCondition = (event) => {
 		setUserCondition(event.target.value);
-	};
-	const handleTest = (event) => {
-		setUserTest(event.target.value);
 	};
 
 	const handleSubmit = (e) => {
@@ -129,228 +90,53 @@ const Search = () => {
 					</h2>
 				</div>
 				<hr></hr>
-				<form
-					className="form__wrapper"
-					onSubmit={handleSubmit}
-				>
-					<FormControl
-						className={
-							classes.formControl
-						}
+				<div className="card">
+					<form
+						className="form__wrapper"
+						onSubmit={handleSubmit}
 					>
-						<InputLabel id="intolerance-checkbox-label">
-							Intolerances
-						</InputLabel>
-						<Select
+						<FormField
 							labelId="intolerance-checkbox-label"
+							inputLabelDisplay="Intolerance"
 							id="intolerance-checkbox"
-							multiple
-							value={
+							selectValue={
 								userIntolerance
 							}
-							onChange={
+							selectOnChange={
 								handleIntolerance
 							}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
-						>
-							{intolerances.map(
-								(intolerance) => (
-									<MenuItem
-										key={
-											intolerance
-										}
-										value={
-											intolerance
-										}
-									>
-										<Checkbox
-											checked={
-												userIntolerance.indexOf(
-													intolerance
-												) >
-												-1
-											}
-										/>
-										<ListItemText
-											primary={
-												intolerance
-											}
-										/>
-									</MenuItem>
-								)
-							)}
-						</Select>
-					</FormControl>
-					<FormControl
-						className={
-							classes.formControl
-						}
-					>
-						<InputLabel id="diet-checkbox-label">
-							Diet
-						</InputLabel>
-						<Select
+							option={intolerances}
+						/>
+						<FormField
 							labelId="diet-checkbox-label"
+							inputLabelDisplay="Diet"
 							id="diet-checkbox"
-							multiple
-							value={userDiet}
-							onChange={handleDiet}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
+							selectValue={userDiet}
+							selectOnChange={
+								handleDiet
 							}
-							MenuProps={MenuProps}
-						>
-							{diets.map((diet) => (
-								<MenuItem
-									key={diet}
-									value={diet}
-								>
-									<Checkbox
-										checked={
-											userDiet.indexOf(
-												diet
-											) > -1
-										}
-									/>
-									<ListItemText
-										primary={
-											diet
-										}
-									/>
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-					<FormControl
-						className={
-							classes.formControl
-						}
-					>
-						<InputLabel id="condition-checkbox-label">
-							Conditions
-						</InputLabel>
-						<Select
+							option={diets}
+						/>
+						<FormField
 							labelId="condition-checkbox-label"
+							inputLabelDisplay="Condition"
 							id="condition-checkbox"
-							multiple
-							value={userCondition}
-							onChange={
+							selectValue={
+								userCondition
+							}
+							selectOnChange={
 								handleCondition
 							}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
+							option={conditions}
+						/>
+						<button
+							type="submit"
+							className="btn my-3"
 						>
-							{conditions.map(
-								(condition) => (
-									<MenuItem
-										key={
-											condition
-										}
-										value={
-											condition
-										}
-									>
-										<Checkbox
-											checked={
-												userCondition.indexOf(
-													condition
-												) >
-												-1
-											}
-										/>
-										<ListItemText
-											primary={
-												condition
-											}
-										/>
-									</MenuItem>
-								)
-							)}
-						</Select>
-					</FormControl>
-					<FormControl
-						className={
-							classes.formControl
-						}
-					>
-						<InputLabel id="test-checkbox-label">
-							Test
-						</InputLabel>
-						<Select
-							labelId="test-checkbox-label"
-							id="test-checkbox"
-							multiple
-							value={userTest}
-							onChange={handleTest}
-							input={<Input />}
-							renderValue={(
-								selected
-							) =>
-								selected.join(
-									", "
-								)
-							}
-							MenuProps={MenuProps}
-						>
-							{tests.map((test) => (
-								<MenuItem
-									key={test}
-									value={test}
-								>
-									<Checkbox
-										checked={
-											userTest.indexOf(
-												test
-											) > -1
-										}
-									/>
-									<ListItemText
-										primary={
-											test
-										}
-									/>
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-					<FormField
-						labelId="test-checkbox-label"
-						inputLabelDisplay="Test"
-						id="test-checkbox"
-						selectValue={userTest}
-						selectOnChange={
-							handleTest
-						}
-						option="tests"
-						event="test"
-					/>
-					<button
-						type="submit"
-						className="btn my-3"
-					>
-						Submit
-					</button>
-				</form>
+							Submit
+						</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	);

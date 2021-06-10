@@ -43,7 +43,6 @@ const FormField = (props) => {
 		selectValue,
 		selectOnChange,
 		option,
-		event,
 	} = props;
 	return (
 		<FormControl
@@ -64,22 +63,15 @@ const FormField = (props) => {
 				}
 				MenuProps={MenuProps}
 			>
-				{{ option }.map(({ event }) => (
-					<MenuItem
-						key={{ event }}
-						value={{ event }}
-					>
+				{option.map((e) => (
+					<MenuItem key={e} value={e}>
 						<Checkbox
-							checked={
-								{
-									selectValue,
-								}.indexOf({
-									event,
-								}) > -1
-							}
+							checked={selectValue.includes(
+								e
+							)}
 						/>
 						<ListItemText
-							primary={{ event }}
+							primary={e}
 						/>
 					</MenuItem>
 				))}
