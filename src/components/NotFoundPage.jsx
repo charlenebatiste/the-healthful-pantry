@@ -15,11 +15,8 @@ class NotFoundPage extends React.Component {
 					alt="shocked little girl"
 				/>
 				<div className="text-center">
-				
 					<h1>Sorry!</h1> <br />
-					<p>
-						This page isn't working
-					</p>
+					<p>This page isn't working</p>
 					<br />
 					<p
 						style={{
