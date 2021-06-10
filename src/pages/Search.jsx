@@ -9,6 +9,9 @@ import {
 	Select,
 	Checkbox,
 } from "@material-ui/core";
+import axios from "axios";
+const REACT_APP_SERVER_URL =
+	process.env.REACT_APP_SERVER_URL;
 
 const useStyles = makeStyles((theme) => ({
 	formControl: {
@@ -50,6 +53,7 @@ const intolerances = [
 
 const diets = [
 	"pescetarian",
+	"ketogenic",
 	"lacto vegetarian",
 	"ovo vegetarian",
 	"vegan",
@@ -61,6 +65,8 @@ const diets = [
 const conditions = [
 	"Diabetes",
 	"Anemia",
+	"Alzheimers",
+	"Celiac Disease",
 	"Cancer",
 	"Heart Disease / Heart Failure",
 	"Epilepsy ",
@@ -75,26 +81,34 @@ const Search = () => {
 	const [userCondition, setUserCondition] =
 		useState([]);
 
-	const handleChange = (event) => {
+	const handleIntolerance = (event) => {
 		setUserIntolerance(event.target.value);
 	};
-	// buggy because this is currently only setting user intolerance and not anything else
-
-	const handleChangeMultiple = (event) => {
-		const { options } = event.target;
-		const value = [];
-		for (
-			let i = 0, l = options.length;
-			i < l;
-			i += 1
-		) {
-			if (options[i].selected) {
-				value.push(options[i].value);
-			}
-		}
-		setUserIntolerance(value);
+	const handleDiet = (event) => {
+		setUserDiet(event.target.value);
 	};
-	// will work for all of the input fields
+	const handleCondition = (event) => {
+		setUserCondition(event.target.value);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const searchParams = {
+			userIntolerance,
+			userDiet,
+			userCondition,
+		};
+		console.log(searchParams);
+		// let url = `${REACT_APP_SERVER_URL}/search`;
+		// axios
+		// 	.post(url, searchParams)
+		// 	.then((response) => {
+		// 		console.log(response.data);
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 	});
+	};
 
 	return (
 		<div>
@@ -109,7 +123,10 @@ const Search = () => {
 					</h2>
 				</div>
 				<hr></hr>
-				<form className="form__wrapper">
+				<form
+					className="form__wrapper"
+					onSubmit={handleSubmit}
+				>
 					<FormControl
 						className={
 							classes.formControl
@@ -126,7 +143,7 @@ const Search = () => {
 								userIntolerance
 							}
 							onChange={
-								handleChange
+								handleIntolerance
 							}
 							input={<Input />}
 							renderValue={(
@@ -179,9 +196,7 @@ const Search = () => {
 							id="diet-checkbox"
 							multiple
 							value={userDiet}
-							onChange={
-								handleChange
-							}
+							onChange={handleDiet}
 							input={<Input />}
 							renderValue={(
 								selected
@@ -227,7 +242,7 @@ const Search = () => {
 							multiple
 							value={userCondition}
 							onChange={
-								handleChange
+								handleCondition
 							}
 							input={<Input />}
 							renderValue={(
@@ -267,6 +282,12 @@ const Search = () => {
 							)}
 						</Select>
 					</FormControl>
+					<button
+						type="submit"
+						className="btn my-3"
+					>
+						Submit
+					</button>
 				</form>
 			</div>
 		</div>
