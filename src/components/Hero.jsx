@@ -11,7 +11,7 @@ const Hero = () => {
           
         <p>Eat your way back to health and fight back from chronic illnes and disease. </p>
         <p className="lead">
-         <a className="btn btn-primary btn-lg" href="#" role="button">Get Started!</a>
+         <a className="btn btn-primary btn-lg" href="/search" role="button">Get Started!</a>
         </p>
          </div>
       </div>
