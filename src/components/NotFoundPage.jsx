@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PageNotFound from "../img/PageNotFound.jpg";
 import "./NotFoundPage.css";
-import Card from './Card';
 
 class NotFoundPage extends React.Component {
 	render() {
@@ -16,11 +15,8 @@ class NotFoundPage extends React.Component {
 					alt="shocked little girl"
 				/>
 				<div className="text-center">
-				
 					<h1>Sorry!</h1> <br />
-					<p>
-						This page isn't working
-					</p>
+					<p>This page isn't working</p>
 					<br />
 					<p
 						style={{
