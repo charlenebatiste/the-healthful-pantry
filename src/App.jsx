@@ -24,6 +24,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import NotFoundPage from "./components/NotFoundPage";
 import Profile from "./pages/Profile"
+import Favorites from "./pages/Favorites"
 
 // Private route component
 const PrivateRoute = ({
@@ -111,6 +112,10 @@ function App() {
 				<Route
 					path="/signup"
 					component={Signup}
+				/>
+				<Route
+					path="/favorites"
+					component={Favorites}
 				/>
 				<Route
 					path="/login"
