@@ -1,5 +1,5 @@
 // Imports
-import "./Signup.css";
+import "./css/Signup.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
