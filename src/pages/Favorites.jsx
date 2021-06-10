@@ -1,13 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Card from '../components/Card'
+import { makeStyles, Paper, Grid } from '@material-ui/core';
+import FavoritesCards from '../components/FavoritesCards'
+
 
 function Favorites (props) {
 	return (
 		<div>
-			<Card/>
+  <h1 className="Fav-Header"> My Favorites List </h1>
+			<FavoritesCards/>
 		</div>
 	);
 }

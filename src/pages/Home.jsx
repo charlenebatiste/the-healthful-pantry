@@ -7,7 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 function Home(props) {
 	return (
 		<div>
-			<Hero />
+			<Hero/>
 			<About />
 			<Testimonial />
 			<HowItWorks />
