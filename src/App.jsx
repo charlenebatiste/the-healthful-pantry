@@ -61,6 +61,8 @@ function App() {
 	const [isAuthenticated, setIsAuthenticated] =
 		useState(true);
 
+	const [allRecipes, setAllRecipes]  = useState([]);
+
 	useEffect(() => {
 		let token;
 		// if there is no token inside localStorage, then the user is not authenticated
@@ -110,7 +112,12 @@ function App() {
 				/>
 				<Route
 					path="/search"
-					component={Search}
+					render={(props) => (
+						<Search
+							{...props}
+							setAllRecipes={setAllRecipes}
+						/>
+					)}
 				/>
 				<Route
 					path="/signup"
@@ -121,9 +128,13 @@ function App() {
 					component={Favorites}
 				/>
 				<Route
-					exact
 					path="/results"
-					component={SearchResults}
+					render={(props) => (
+						<SearchResults
+							{...props}
+							allRecipes={allRecipes}
+						/>
+					)}
 				/>
 				<Route
 					// path="/results/:id"
