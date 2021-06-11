@@ -4,8 +4,8 @@ const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
 
 const Edit = () => {
-	const { name, setName } = useState("");
-	const { email, setEmail } = useState("");
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
 
 	const handleInput = (e) => {
 		switch (e.target.name) {
