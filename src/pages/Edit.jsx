@@ -1,14 +1,26 @@
 import React, { useState } from "react";
+import axios from "axios";
+const REACT_APP_SERVER_URL =
+	process.env.REACT_APP_SERVER_URL;
 
 const Edit = () => {
-	const { name, setName } = useState();
-	const { email, setEmail } = useState();
+	const { name, setName } = useState("");
+	const { email, setEmail } = useState("");
 
-	const updateName = (e) => {
-		setName(e.target.value);
-	};
-	const updateEmail = (e) => {
-		setEmail(e.target.value);
+	const handleInput = (e) => {
+		switch (e.target.name) {
+			case "name":
+				setName(e.target.value);
+				break;
+			case "email":
+				setEmail(e.target.value);
+				break;
+			case "email":
+				setEmail(e.target.value);
+				break;
+			default:
+				break;
+		}
 	};
 
 	const handleSubmit = (e) => {
@@ -17,10 +29,15 @@ const Edit = () => {
 			name,
 			email,
 		};
-		console.log(
-			`you want to submit this informtion`
-		);
-		console.log(e.target.value);
+		let url = `${REACT_APP_SERVER_URL}/api/user/profile/edit`;
+		axios
+			.post(url, payload)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
@@ -36,6 +53,7 @@ const Edit = () => {
 						type="text"
 						name="name"
 						value={name}
+						onChange={handleInput}
 						placeholder="New name"
 					></input>
 				</div>
@@ -44,6 +62,7 @@ const Edit = () => {
 						type="text"
 						name="email"
 						value={email}
+						onChange={handleInput}
 						placeholder="New email"
 					></input>
 				</div>
