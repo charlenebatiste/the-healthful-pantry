@@ -1,9 +1,26 @@
+import React, { useState } from "react";
+
 const Edit = () => {
+	const { name, setName } = useState();
+	const { email, setEmail } = useState();
+
+	const updateName = (e) => {
+		setName(e.target.value);
+	};
+	const updateEmail = (e) => {
+		setEmail(e.target.value);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		const payload = {
+			name,
+			email,
+		};
 		console.log(
 			`you want to submit this informtion`
 		);
+		console.log(e.target.value);
 	};
 
 	return (
@@ -18,6 +35,7 @@ const Edit = () => {
 					<input
 						type="text"
 						name="name"
+						value={name}
 						placeholder="New name"
 					></input>
 				</div>
@@ -25,6 +43,7 @@ const Edit = () => {
 					<input
 						type="text"
 						name="email"
+						value={email}
 						placeholder="New email"
 					></input>
 				</div>
