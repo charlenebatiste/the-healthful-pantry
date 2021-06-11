@@ -1,27 +1,27 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-
+import "./css/Navbar.css";
 const Navbar = (props) => {
 	return (
-		<nav className="navbar navbar-expand-lg">
-			<div className="container">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
 				<button
-					className="navbar-toggler"
+					class="navbar-toggler"
 					type="button"
-					data-toggle="collapse"
-					data-target="#navbarsExample07"
-					aria-controls="#navbarsExample07"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span className="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon "></span>
 				</button>
 				<div
-					className="collapse navbar-collapse"
-					id="navbarsExample07"
+					class="collapse navbar-collapse"
+					id="navbarNav"
 				>
-					<ul className="navbar-nav mr-auto">
-						<li className="nav-item">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
 							<NavLink
 								className="nav-link"
 								to="/search"
@@ -30,6 +30,7 @@ const Navbar = (props) => {
 							</NavLink>
 						</li>
 					</ul>
+
 					<NavLink
 						className="navbar-brand nav-link"
 						to="/"
@@ -38,11 +39,12 @@ const Navbar = (props) => {
 							The Healthful Pantry
 						</p>
 					</NavLink>
+
 					{props.isAuth ? (
 						<ul className="navbar-nav ml-auto">
 							{/* <li className="nav-item">
-                                    <NavLink className="nav-link" to="/cart">Shopping Cart</NavLink>
-                                </li> */}
+		                            <NavLink className="nav-link" to="/cart">Shopping Cart</NavLink>
+		                        </li> */}
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
