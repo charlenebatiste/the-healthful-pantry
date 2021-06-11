@@ -3,9 +3,14 @@ import axios from "axios";
 const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
 
-const Edit = () => {
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
+const Edit = (props) => {
+	const id = props.user.id;
+	const [name, setName] = useState(
+		props.user.name
+	);
+	const [email, setEmail] = useState(
+		props.user.email
+	);
 
 	const handleInput = (e) => {
 		switch (e.target.name) {
@@ -26,10 +31,11 @@ const Edit = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const payload = {
+			id,
 			name,
 			email,
 		};
-		let url = `${REACT_APP_SERVER_URL}/api/user/profile/edit`;
+		let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
 		axios
 			.post(url, payload)
 			.then((response) => {
