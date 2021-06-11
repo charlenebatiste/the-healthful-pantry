@@ -2,36 +2,33 @@ import React from 'react';
 
 const Graph = (props) => {
 	return (
+        <div class="container-sm">
 <table class="table table-hover table-sm table-responsive">
   <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-     
-    </tr>
+  <tr>
+      <th>Nutrition Information</th>
+  </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-     
+      <td scope="row">Calories</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      
+      <td scope="row">Protein</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      
+      <td scope="row">Carbohydrates</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td scope="row">Fiber</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
+</div>
 	);
 };
 export default Graph;
