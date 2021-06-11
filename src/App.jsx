@@ -125,7 +125,8 @@ function App() {
 					component={SearchResults}
 				/>
 				<Route
-					path="/results/:id"
+					// path="/results/:id"
+					path="/details"
 					component={Details}
 				/>
 
