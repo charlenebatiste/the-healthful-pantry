@@ -35,14 +35,10 @@ const Steps = () => {
 									Step Two
 								</h5>
 								<p class="card-text">
-									Some quick
-									example text
-									to build on
-									the card title
-									and make up
-									the bulk of
-									the card's
-									content.
+									Like the
+									Recipe? Add it
+									to your
+									Rolodex
 								</p>
 							</div>
 						</div>
@@ -54,14 +50,12 @@ const Steps = () => {
 									Step Three
 								</h5>
 								<p class="card-text">
-									Some quick
-									example text
-									to build on
-									the card title
-									and make up
-									the bulk of
-									the card's
-									content.
+									Generate a
+									Shopping List
+									to make sure
+									you have
+									everything you
+									need
 								</p>
 							</div>
 						</div>

@@ -23,9 +23,10 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import NotFoundPage from "./components/NotFoundPage";
-import Profile from "./pages/Profile"
-import Favorites from "./pages/Favorites"
+import Profile from "./pages/Profile";
+import Favorites from "./pages/Favorites";
 import SearchResults from "./pages/SearchResults";
+import Details from "./pages/Details";
 
 // Private route component
 const PrivateRoute = ({
@@ -119,9 +120,15 @@ function App() {
 					component={Favorites}
 				/>
 				<Route
-					path="/searchresults"
+					exact
+					path="/results"
 					component={SearchResults}
 				/>
+				<Route
+					path="/results/:id"
+					component={Details}
+				/>
+
 				<Route
 					path="/login"
 					render={(props) => (
@@ -137,12 +144,16 @@ function App() {
 						/>
 					)}
 				/>
-				<Route path='/profile' component={ Profile } user={currentUser} handleLogout={handleLogout} />
+				<PrivateRoute
+					path="/profile"
+					component={Profile}
+					user={currentUser}
+					handleLogout={handleLogout}
+				/>
 				<Route
 					path="*"
 					component={NotFoundPage}
 				/>
-				 
 			</Switch>
 			<Footer />
 		</div>

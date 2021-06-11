@@ -4,14 +4,14 @@ import Hero from "../components/Hero";
 import Testimonial from "../components/Testimonial";
 import HowItWorks from "../components/HowItWorks";
 
-function Home(props) {
+const Home = (props) => {
 	return (
 		<div>
-			<Hero/>
+			<Hero />
 			<About />
 			<Testimonial />
 			<HowItWorks />
 		</div>
 	);
-}
+};
 export default Home;
