@@ -6,8 +6,8 @@ function SearchResults(props) {
 	return (
 		<div>
 			<h1 className="Fav-Header">
-				{" "}
-				Search Results{" "}
+				
+				Search Results
 			</h1>
 			<SearchResultsCards />
 		</div>
