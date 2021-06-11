@@ -37,7 +37,7 @@ const Edit = (props) => {
 		};
 		let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
 		axios
-			.post(url, payload)
+			.put(url, payload)
 			.then((response) => {
 				console.log(response.data);
 			})
