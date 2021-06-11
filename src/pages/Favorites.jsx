@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Paper, Grid } from '@material-ui/core';
-import FavoritesCards from '../components/FavoritesCards'
+import FavoritesCards from '../components/FavoritesCards';
+import '../components/css/FavoritesCards.css';
 
 
 function Favorites (props) {
