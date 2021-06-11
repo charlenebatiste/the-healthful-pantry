@@ -1,5 +1,5 @@
 import React from "react";
-import HowItWorksCard from "./HowItWorksCard";
+import HowItWorksCard from "./css/HowItWorksCard.css";
 
 const HowItWorks = () => {
 	return (
