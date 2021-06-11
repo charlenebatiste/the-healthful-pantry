@@ -27,6 +27,7 @@ import Profile from "./pages/Profile";
 import Favorites from "./pages/Favorites";
 import SearchResults from "./pages/SearchResults";
 import Details from "./pages/Details";
+import Edit from "./pages/Edit";
 
 // Private route component
 const PrivateRoute = ({
@@ -145,8 +146,15 @@ function App() {
 					)}
 				/>
 				<PrivateRoute
+					exact
 					path="/profile"
 					component={Profile}
+					user={currentUser}
+					handleLogout={handleLogout}
+				/>
+				<PrivateRoute
+					path="/profile/edit"
+					component={Edit}
 					user={currentUser}
 					handleLogout={handleLogout}
 				/>
