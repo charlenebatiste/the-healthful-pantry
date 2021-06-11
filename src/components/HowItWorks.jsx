@@ -1,7 +1,7 @@
 import React from "react";
-import HowItWorksCard from "./css/HowItWorksCard.css";
+import HowItWorks from "./css/HowItWorks.css";
 
-const HowItWorks = () => {
+const Steps = () => {
 	return (
 		<>
 			<h1 className="text-center">
@@ -72,4 +72,4 @@ const HowItWorks = () => {
 	);
 };
 
-export default HowItWorks;
+export default Steps;
