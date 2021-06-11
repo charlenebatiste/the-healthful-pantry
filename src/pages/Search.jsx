@@ -66,15 +66,15 @@ const Search = () => {
 			userCondition,
 		};
 		console.log(searchParams);
-		// let url = `${REACT_APP_SERVER_URL}/search`;
-		// axios
-		// 	.post(url, searchParams)
-		// 	.then((response) => {
-		// 		console.log(response.data);
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error);
-		// 	});
+		let url = `${REACT_APP_SERVER_URL}/api/recipe/search`;
+		axios
+			.post(url, searchParams)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
