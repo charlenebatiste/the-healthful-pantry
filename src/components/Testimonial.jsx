@@ -3,7 +3,7 @@ import './css/Testimonial.css'
 
 const Testimonial = () => {
     return (
-        <div >
+        <div className="testDiv">
             <h1 className="testimonialHeader">Testimonials</h1>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">

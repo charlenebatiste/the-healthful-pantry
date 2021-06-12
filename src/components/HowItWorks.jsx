@@ -10,7 +10,7 @@ const Steps = () => {
 			<div className="container-fluid contHiw">
 				<div className="row justify-content-center ">
 					<div className="col-3">
-						<div class="card">
+						<div class="card hiwCard">
 							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step One
@@ -22,7 +22,7 @@ const Steps = () => {
 						</div>
 					</div>
 					<div className="col-3">
-						<div class="card">
+						<div class="card hiwCard">
 							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step Two
@@ -34,7 +34,7 @@ const Steps = () => {
 						</div>
 					</div>
 					<div className="col-3">
-						<div class="card">
+						<div class="card hiwCard">
 							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step Three
