@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {Redirect} from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import FormField from "../components/FormField";
 import "../components/css/Search.css";
 import axios from "axios";
@@ -43,14 +43,15 @@ const conditions = [
 ];
 
 const Search = (props) => {
-	const {setAllRecipes} = props
+	const { setAllRecipes } = props;
 	const [userIntolerance, setUserIntolerance] =
 		useState([]);
 	const [userDiet, setUserDiet] = useState([]);
 	const [userCondition, setUserCondition] =
 		useState([]);
 
-	const [redirect, setRedirect] = useState(false);
+	const [redirect, setRedirect] =
+		useState(false);
 
 	const handleIntolerance = (event) => {
 		setUserIntolerance(event.target.value);
@@ -73,18 +74,23 @@ const Search = (props) => {
 		let url = `${REACT_APP_SERVER_URL}/api/recipe/search`;
 		axios
 			.post(url, searchParams)
-			.then(async(response) => {
-				console.log(response.data.results);
-				await setAllRecipes(response.data.results);
+			.then(async (response) => {
+				// console.log(response.data.results);
+				await setAllRecipes(
+					response.data.results
+				);
 				await setRedirect(true);
-				console.log("here is all recipes");
+				// console.log(
+				// 	"here is all recipes"
+				// );
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	};
 
-	if (redirect) return <Redirect to="/results"/>
+	if (redirect)
+		return <Redirect to="/results" />;
 
 	return (
 		<div className="search__container container-fluid">

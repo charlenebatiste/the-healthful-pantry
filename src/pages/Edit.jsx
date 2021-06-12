@@ -4,29 +4,34 @@ const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
 
 const Edit = (props) => {
-	const id = props.user.id;
-	const [name, setName] = useState(
-		props.user.name
-	);
-	const [email, setEmail] = useState(
-		props.user.email
-	);
+	const { id, name, email } = props.user;
+	// const { setCurrentUser } =
+	// 	props.setCurrentUser;
+	console.log(props.user);
+
+	// const handleInput = (e) => {
+	// 	switch (e.target.name) {
+	// 		case "name":
+	// 			setName(e.target.value);
+	// 			break;
+	// 		case "email":
+	// 			setEmail(e.target.value);
+	// 			break;
+	// 		case "email":
+	// 			setEmail(e.target.value);
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// };
 
 	const handleInput = (e) => {
-		switch (e.target.name) {
-			case "name":
-				setName(e.target.value);
-				break;
-			case "email":
-				setEmail(e.target.value);
-				break;
-			case "email":
-				setEmail(e.target.value);
-				break;
-			default:
-				break;
-		}
+		console.log(test);
 	};
+
+	// const handleName = () => {
+	// 	setState(e.target.name);
+	// };
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -35,15 +40,17 @@ const Edit = (props) => {
 			name,
 			email,
 		};
-		let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
-		axios
-			.put(url, payload)
-			.then((response) => {
-				console.log(response.data);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+		// 	let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
+		// 	axios
+		// 		.put(url, payload)
+		// 		.then((response) => {
+		// 			console.log(response.data);
+		// 			setName(response.data.name);
+		// 			setEmail(response.data.name);
+		// 		})
+		// 		.catch((error) => {
+		// 			console.log(error);
+		// 		});
 	};
 
 	return (

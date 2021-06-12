@@ -3,7 +3,7 @@ import HowItWorks from "./css/HowItWorks.css";
 
 const Steps = () => {
 	return (
-		<>
+		<div className="step_section">
 			<h1 className="text-center">
 				How It Works
 			</h1>
@@ -11,26 +11,22 @@ const Steps = () => {
 				<div className="row">
 					<div className="col-4">
 						<div class="card">
-							<div class="card-body">
+							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step One
 								</h5>
 								<p class="card-text">
-									Some quick
-									example text
-									to build on
-									the card title
-									and make up
-									the bulk of
-									the card's
-									content.
+									Search for
+									Recipes by
+									diet or
+									condition
 								</p>
 							</div>
 						</div>
 					</div>
 					<div className="col-4">
 						<div class="card">
-							<div class="card-body">
+							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step Two
 								</h5>
@@ -46,7 +42,7 @@ const Steps = () => {
 					<div className="col-4">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">
+								<h5 class="card-title text-center">
 									Step Three
 								</h5>
 								<p class="card-text">
@@ -62,7 +58,7 @@ const Steps = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

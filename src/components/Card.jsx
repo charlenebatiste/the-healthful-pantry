@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function RecipeReviewCard() {
+const SearchCard = (props) => {
+	// const { recipes } = props.recipes;
 	const classes = useStyles();
 	const [expanded, setExpanded] =
 		React.useState(false);
@@ -77,4 +78,6 @@ export default function RecipeReviewCard() {
 			</Card>
 		</a>
 	);
-}
+};
+
+export default SearchCard;
