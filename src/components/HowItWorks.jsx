@@ -1,5 +1,9 @@
 import React from "react";
 import HowItWorks from "./css/HowItWorks.css";
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Montserrat:wght@100&display=swap');
+</style>
 
 const Steps = () => {
 	return (
