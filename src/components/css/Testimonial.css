@@ -1,7 +1,10 @@
-h1 {
+.testimonialHeader {
     text-align: center;
+    padding-right: 0px;
+    padding: 2%;
 }
 
 p {
     padding-bottom: 1%;
+    
 }

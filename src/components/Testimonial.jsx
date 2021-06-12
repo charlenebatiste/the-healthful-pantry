@@ -4,7 +4,7 @@ import './css/Testimonial.css'
 const Testimonial = () => {
     return (
         <div >
-            <h1>Testimonials</h1>
+            <h1 className="testimonialHeader">Testimonials</h1>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

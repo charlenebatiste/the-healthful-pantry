@@ -4,11 +4,11 @@ import HowItWorks from "./css/HowItWorks.css";
 const Steps = () => {
 	return (
 		<div className="step_section">
-			<h1 className="text-center">
+			<h1 className="text-center hIW">
 				How It Works
 			</h1>
-			<div className="container">
-				<div className="row justify-content-center justify-content-around">
+			<div className="container-fluid contHiw">
+				<div className="row justify-content-center ">
 					<div className="col-3">
 						<div class="card">
 							<div class="card-body text-center">
