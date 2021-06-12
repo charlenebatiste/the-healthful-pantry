@@ -1,13 +1,13 @@
 // Imports
 import React, {
-	Component,
-	useEffect,
-	useState,
+  Component,
+  useEffect,
+  useState,
 } from "react";
 import {
-	Route,
-	Switch,
-	Redirect,
+  Route,
+  Switch,
+  Redirect,
 } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -31,161 +31,164 @@ import Edit from "./pages/Edit";
 
 // Private route component
 const PrivateRoute = ({
-	component: Component,
-	...rest
+  component: Component,
+  ...rest
 }) => {
-	console.log("This is a private route...");
-	let user = localStorage.getItem("jwtToken");
+  console.log("This is a private route...");
+  let user = localStorage.getItem("jwtToken");
 
-	return (
-		<Route
-			{...rest}
-			render={(props) => {
-				return user ? (
-					<Component
-						{...rest}
-						{...props}
-					/>
-				) : (
-					<Redirect to="/login" />
-				);
-			}}
-		/>
-	);
+  return (
+    <Route
+      {...rest}
+      render={(props) => {
+        return user ? (
+          <Component
+            {...rest}
+            {...props}
+          />
+        ) : (
+          <Redirect to="/login" />
+        );
+      }}
+    />
+  );
 };
 
 function App() {
-	// Set state values
-	const [currentUser, setCurrentUser] =
-		useState("");
-	const [isAuthenticated, setIsAuthenticated] =
-		useState(true);
+  // Set state values
+  const [currentUser, setCurrentUser] =
+    useState("");
+  const [isAuthenticated, setIsAuthenticated] =
+    useState(true);
 
-	const [allRecipes, setAllRecipes] = useState(
-		[]
-	);
+  const [allRecipes, setAllRecipes] = useState(
+    []
+  );
 
-	useEffect(() => {
-		let token;
-		// if there is no token inside localStorage, then the user is not authenticated
-		if (!localStorage.getItem("jwtToken")) {
-			console.log(
-				"is not authenticated..."
-			);
-			setIsAuthenticated(false);
-		} else {
-			token = jwt_decode(
-				localStorage.getItem("jwtToken")
-			);
-			console.log("token", token);
-			setAuthToken(token);
-			setCurrentUser(token);
-		}
-	}, []);
+  useEffect(() => {
+    let token;
+    // if there is no token inside localStorage, then the user is not authenticated
+    if (!localStorage.getItem("jwtToken")) {
+      console.log(
+        "is not authenticated..."
+      );
+      setIsAuthenticated(false);
+    } else {
+      token = jwt_decode(
+        localStorage.getItem("jwtToken")
+      );
+      console.log("token", token);
+      setAuthToken(token);
+      console.log('currentUser before set', currentUser);
+      setCurrentUser(token);
+    }
+  }, []);
 
-	const nowCurrentUser = (userData) => {
-		console.log(
-			"--- inside nowCurrentUser ---"
-		);
-		setCurrentUser(userData);
-		setIsAuthenticated(true);
-	};
+  const nowCurrentUser = (userData) => {
+    console.log(
+      "--- inside nowCurrentUser ---"
+    );
+    console.log(userData);
+    setCurrentUser(userData);
+    setIsAuthenticated(true);
+  };
 
-	const handleLogout = () => {
-		if (localStorage.getItem("jwtToken")) {
-			localStorage.removeItem("jwtToken"); // if there is a token, then remove it
-			setCurrentUser(null); // set the currentUser to null
-			setIsAuthenticated(false); // set is auth to false
-		}
-	};
+  const handleLogout = () => {
+    if (localStorage.getItem("jwtToken")) {
+      localStorage.removeItem("jwtToken"); // if there is a token, then remove it
+      setCurrentUser(null); // set the currentUser to null
+      setIsAuthenticated(false); // set is auth to false
+    }
+  };
 
-	return (
-		<div className="App">
-			<Navbar
-				isAuth={isAuthenticated}
-				handleLogout={handleLogout}
-			/>
-			<Switch>
-				{/* routes below */}
-				<Route
-					exact
-					path="/"
-					component={Home}
-				/>
-				<Route
-					path="/search"
-					render={(props) => (
-						<Search
-							{...props}
-							setAllRecipes={
-								setAllRecipes
-							}
-						/>
-					)}
-				/>
-				<Route
-					path="/signup"
-					component={Signup}
-				/>
-				<Route
-					path="/favorites"
-					component={Favorites}
-				/>
-				<Route
-					path="/results"
-					render={(props) => (
-						<SearchResults
-							{...props}
-							allRecipes={
-								allRecipes
-							}
-						/>
-					)}
-				/>
-				<PrivateRoute
-					// path="/results/:id"
-					path="/details"
-					component={Details}
-					component={Profile}
-					user={currentUser}
-					handleLogout={handleLogout}
-				/>
-				<Route
-					path="/login"
-					render={(props) => (
-						<Login
-							{...props}
-							user={currentUser}
-							nowCurrentUser={
-								nowCurrentUser
-							}
-							setIsAuthenticated={
-								setIsAuthenticated
-							}
-						/>
-					)}
-				/>
-				<PrivateRoute
-					exact
-					path="/profile"
-					component={Profile}
-					user={currentUser}
-					handleLogout={handleLogout}
-				/>
-				<PrivateRoute
-					path="/profile/edit"
-					component={Edit}
-					user={currentUser}
-					handleLogout={handleLogout}
-				/>
-				<Route
-					path="*"
-					component={NotFoundPage}
-				/>
-			</Switch>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Navbar
+        isAuth={isAuthenticated}
+        handleLogout={handleLogout}
+      />
+      <Switch>
+        {/* routes below */}
+        <Route
+          exact
+          path="/"
+          component={Home}
+        />
+        <Route
+          path="/search"
+          render={(props) => (
+            <Search
+              {...props}
+              setAllRecipes={
+                setAllRecipes
+              }
+            />
+          )}
+        />
+        <Route
+          path="/signup"
+          component={Signup}
+        />
+        <Route
+          path="/favorites"
+          component={Favorites}
+        />
+        <Route
+          path="/results"
+          render={(props) => (
+            <SearchResults
+              {...props}
+              allRecipes={
+                allRecipes
+              }
+            />
+          )}
+        />
+        <PrivateRoute
+          // path="/results/:id"
+          path="/details"
+          component={Details}
+          component={Profile}
+          user={currentUser}
+          handleLogout={handleLogout}
+        />
+        <Route
+          path="/login"
+          render={(props) => (
+            <Login
+              {...props}
+              user={currentUser}
+              nowCurrentUser={
+                nowCurrentUser
+              }
+              setIsAuthenticated={
+                setIsAuthenticated
+              }
+            />
+          )}
+        />
+        <PrivateRoute
+          exact
+          path="/profile"
+          component={Profile}
+          user={currentUser}
+          handleLogout={handleLogout}
+        />
+        <PrivateRoute
+          path="/profile/edit"
+          component={Edit}
+          user={currentUser}
+          setUser={(userData) => nowCurrentUser(userData)}
+          handleLogout={handleLogout}
+        />
+        <Route
+          path="*"
+          component={NotFoundPage}
+        />
+      </Switch>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
