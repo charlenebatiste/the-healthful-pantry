@@ -6,6 +6,7 @@ import {
 	Card,
 	CardHeader,
 	CardMedia,
+	Form,
 	FormControl,
 	Input,
 } from "@material-ui/core";
@@ -48,11 +49,15 @@ const SearchResults = (props) => {
 					image={r.image}
 					title={r.title}
 				/>
-				{/* <FormControl> */}
-				<button onClick={handleSubmit}>
-					See More
-				</button>
-				{/* </FormControl> */}
+				<p>{r.id}</p>
+				<form>
+					<input
+						// value={r.id}
+						onclick={handleSubmit}
+					>
+						see more
+					</input>
+				</form>
 			</Card>
 
 			{/* </Link> */}
