@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./css/Navbar.css";
 const Navbar = (props) => {
 	return (
-		<nav class="navbar navbar-expand-lg">
+		<nav class="navbar navbar-expand-lg navbar-fixed-top">
 			<div class="container-fluid">
 				<button
 					class="navbar-toggler"

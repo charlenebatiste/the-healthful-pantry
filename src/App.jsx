@@ -61,7 +61,9 @@ function App() {
 	const [isAuthenticated, setIsAuthenticated] =
 		useState(true);
 
-	const [allRecipes, setAllRecipes]  = useState([]);
+	const [allRecipes, setAllRecipes] = useState(
+		[]
+	);
 
 	useEffect(() => {
 		let token;
@@ -115,7 +117,9 @@ function App() {
 					render={(props) => (
 						<Search
 							{...props}
-							setAllRecipes={setAllRecipes}
+							setAllRecipes={
+								setAllRecipes
+							}
 						/>
 					)}
 				/>
@@ -132,7 +136,9 @@ function App() {
 					render={(props) => (
 						<SearchResults
 							{...props}
-							allRecipes={allRecipes}
+							allRecipes={
+								allRecipes
+							}
 						/>
 					)}
 				/>
