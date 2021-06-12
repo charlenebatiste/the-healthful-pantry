@@ -142,14 +142,10 @@ function App() {
 						/>
 					)}
 				/>
-				<Route
+				<PrivateRoute
 					// path="/results/:id"
 					path="/details"
 					component={Details}
-				/>
-				<PrivateRoute
-					exact
-					path="/details/:id"
 					component={Profile}
 					user={currentUser}
 					handleLogout={handleLogout}
