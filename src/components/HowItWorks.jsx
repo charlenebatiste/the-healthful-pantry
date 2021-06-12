@@ -4,54 +4,43 @@ import HowItWorks from "./css/HowItWorks.css";
 const Steps = () => {
 	return (
 		<div className="step_section">
-			<h1 className="text-center">
+			<h1 className="text-center hIW">
 				How It Works
 			</h1>
-			<div className="container">
-				<div className="row">
-					<div className="col-4">
-						<div class="card">
+			<div className="container-fluid contHiw">
+				<div className="row justify-content-center ">
+					<div className="col-3">
+						<div class="card hiwCard">
 							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step One
 								</h5>
 								<p class="card-text">
-									Search for
-									Recipes by
-									diet or
-									condition
+									Search for recipes by diet or condition.
 								</p>
 							</div>
 						</div>
 					</div>
-					<div className="col-4">
-						<div class="card">
+					<div className="col-3">
+						<div class="card hiwCard">
 							<div class="card-body text-center">
 								<h5 class="card-title">
 									Step Two
 								</h5>
 								<p class="card-text">
-									Like the
-									Recipe? Add it
-									to your
-									Rolodex
+									Like the recipe? Save it to your favorites.
 								</p>
 							</div>
 						</div>
 					</div>
-					<div className="col-4">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title text-center">
+					<div className="col-3">
+						<div class="card hiwCard">
+							<div class="card-body text-center">
+								<h5 class="card-title">
 									Step Three
 								</h5>
 								<p class="card-text">
-									Generate a
-									Shopping List
-									to make sure
-									you have
-									everything you
-									need
+									Print your shopping list and eat your way to health.
 								</p>
 							</div>
 						</div>

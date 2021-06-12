@@ -10,7 +10,7 @@ import "./css/FavoritesCards.css";
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
-		padding: "0 50px 0 50px",
+		// padding: "0 50px 0 50px",
 	},
 	paper: {
 		padding: theme.spacing(3),
@@ -29,10 +29,10 @@ const SearchFormat = (props) => {
 				<Grid align="center" item xs={4}>
 					<Paper
 						className={classes.paper}
-						style={{
-							border: "none",
-							boxShadow: "none",
-						}}
+						// style={{
+						// 	border: "none",
+						// 	boxShadow: "none",
+						// }}
 					>
 						<Card recipes={recipes} />
 					</Paper>
@@ -40,10 +40,10 @@ const SearchFormat = (props) => {
 				<Grid align="center" item xs={4}>
 					<Paper
 						className={classes.paper}
-						style={{
-							border: "none",
-							boxShadow: "none",
-						}}
+						// style={{
+						// 	border: "none",
+						// 	boxShadow: "none",
+						// }}
 					>
 						<Card />
 					</Paper>
@@ -51,10 +51,10 @@ const SearchFormat = (props) => {
 				<Grid align="center" item xs={4}>
 					<Paper
 						className={classes.paper}
-						style={{
-							border: "none",
-							boxShadow: "none",
-						}}
+						// style={{
+						// 	border: "none",
+						// 	boxShadow: "none",
+						// }}
 					>
 						<Card />
 					</Paper>
@@ -98,6 +98,7 @@ const SearchFormat = (props) => {
 				</Grid>
 			</Grid>
 		</div>
+		
 	);
 };
 
