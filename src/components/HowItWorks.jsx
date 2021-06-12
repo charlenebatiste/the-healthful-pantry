@@ -41,8 +41,8 @@ const Steps = () => {
 					</div>
 					<div className="col-4">
 						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title text-center">
+							<div class="card-body text-center">
+								<h5 class="card-title">
 									Step Three
 								</h5>
 								<p class="card-text">
