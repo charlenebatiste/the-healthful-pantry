@@ -4,7 +4,7 @@ import {
 	Paper,
 	Grid,
 } from "@material-ui/core";
-import Card from "../components/Card";
+import Card from "./Card";
 import "./css/FavoritesCards.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const SearchResultsCards = () => {
+const SearchFormat = (props) => {
+	const recipes = props.recipes;
 	const classes = useStyles();
 
 	function FormRow() {
@@ -33,7 +34,7 @@ const SearchResultsCards = () => {
 							boxShadow: "none",
 						}}
 					>
-						<Card />
+						<Card recipes={recipes} />
 					</Paper>
 				</Grid>
 				<Grid align="center" item xs={4}>
@@ -100,4 +101,4 @@ const SearchResultsCards = () => {
 	);
 };
 
-export default SearchResultsCards;
+export default SearchFormat;
