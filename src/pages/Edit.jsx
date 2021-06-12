@@ -1,3 +1,4 @@
+import setAuthToken from "../utils/setAuthToken";
 import React, { useState } from "react";
 import axios from "axios";
 const REACT_APP_SERVER_URL =
@@ -5,52 +6,43 @@ const REACT_APP_SERVER_URL =
 
 const Edit = (props) => {
 	const { id, name, email } = props.user;
-	// const { setCurrentUser } =
-	// 	props.setCurrentUser;
 	console.log(props.user);
+	// console.log(props.user);
+	// console.log(id);
+	// console.log(props.user);
+	// const token = user.data.id;
 
-	// const handleInput = (e) => {
-	// 	switch (e.target.name) {
-	// 		case "name":
-	// 			setName(e.target.value);
-	// 			break;
-	// 		case "email":
-	// 			setEmail(e.target.value);
-	// 			break;
-	// 		case "email":
-	// 			setEmail(e.target.value);
-	// 			break;
-	// 		default:
-	// 			break;
-	// 	}
-	// };
+	// const [newName, setNewName] = useState("");
+	// const [newEmail, setNewEmail] = useState("");
 
-	const handleInput = (e) => {
-		console.log(test);
+	const handleName = (e) => {
+		name = e.target.value;
 	};
 
-	// const handleName = () => {
-	// 	setState(e.target.name);
-	// };
+	const handleEmail = (e) => {
+		email = e.target.value;
+	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		// console.log(newName);
 		const payload = {
 			id,
 			name,
 			email,
 		};
-		// 	let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
-		// 	axios
-		// 		.put(url, payload)
-		// 		.then((response) => {
-		// 			console.log(response.data);
-		// 			setName(response.data.name);
-		// 			setEmail(response.data.name);
-		// 		})
-		// 		.catch((error) => {
-		// 			console.log(error);
-		// 		});
+		let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
+		await setAuthToken(
+			localStorage.getItem("jwtToken")
+		);
+		axios
+			.put(url, payload)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
@@ -62,21 +54,27 @@ const Edit = (props) => {
 			</p>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
+					<label htmlFor="name">
+						New Name
+					</label>
 					<input
 						type="text"
 						name="name"
-						value={name}
-						onChange={handleInput}
-						placeholder="New name"
+						onChange={(e) =>
+							handleName(e)
+						}
 					></input>
 				</div>
 				<div className="form-group">
+					<label htmlFor="email">
+						New Email
+					</label>
 					<input
 						type="text"
 						name="email"
-						value={email}
-						onChange={handleInput}
-						placeholder="New email"
+						onChange={(e) =>
+							handleEmail(e)
+						}
 					></input>
 				</div>
 				<button type="submit">
