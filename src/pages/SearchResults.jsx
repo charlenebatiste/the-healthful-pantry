@@ -6,6 +6,8 @@ import {
 	Card,
 	CardHeader,
 	CardMedia,
+	FormControl,
+	Input,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +22,11 @@ const SearchResults = (props) => {
 	// console.log(props);
 	const recipes = props.allRecipes;
 	console.log(recipes);
+	const handleSubmit = (r) => {
+		console.log(
+			`you want to see recipe id ${r.id}`
+		);
+	};
 
 	let recipeList = recipes.map((r, idx) => (
 		<div
@@ -29,6 +36,11 @@ const SearchResults = (props) => {
 		>
 			{/* <img src={r.image} alt={r.title} />
 			{r.title} */}
+			{/* <Link
+				className="listitem_wrapper"
+				to="/recipe/:id"
+			> */}
+
 			<Card className="singleCard">
 				<CardHeader title={r.title} />
 				<CardMedia
@@ -36,13 +48,14 @@ const SearchResults = (props) => {
 					image={r.image}
 					title={r.title}
 				/>
-				<Link
-					className="listitem_wrapper"
-					to="/recipe/:id"
-				>
+				{/* <FormControl> */}
+				<button onClick={handleSubmit}>
 					See More
-				</Link>
+				</button>
+				{/* </FormControl> */}
 			</Card>
+
+			{/* </Link> */}
 		</div>
 	));
 
