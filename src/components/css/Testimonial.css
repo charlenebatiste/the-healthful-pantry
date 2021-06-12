@@ -1,7 +1,7 @@
 .testimonialHeader {
     text-align: center;
     padding-right: 0px;
-    padding: 2%;
+    padding: 1%;
 }
 
 .testDiv{
@@ -13,3 +13,11 @@ p {
     
 }
 
+h1{
+	font-family: 'Cormorant Garamond', serif;
+}
+
+body{
+    font-family: 'Cormorant Garamond', serif;
+font-family: 'Montserrat', sans-serif;
+}

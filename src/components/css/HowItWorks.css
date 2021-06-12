@@ -5,15 +5,24 @@
 
 .contHiw{
 	align-content: center;
-	padding: 2%;
+	padding:1%;
 }
 
 .hIW {
-	padding-top: 3%;
+	padding-top: 2%;
 	padding-right: 0px;
 }
 
 .hiwCard{
 	border-color: #a9c1a9;
 	border-width: 20px;
+}
+
+h1{
+	font-family: 'Cormorant Garamond', serif;
+}
+
+body{
+	font-family: 'Cormorant Garamond', serif;
+font-family: 'Montserrat', sans-serif;
 }
