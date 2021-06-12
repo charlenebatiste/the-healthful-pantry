@@ -147,7 +147,13 @@ function App() {
 					path="/details"
 					component={Details}
 				/>
-
+				<PrivateRoute
+					exact
+					path="/details/:id"
+					component={Profile}
+					user={currentUser}
+					handleLogout={handleLogout}
+				/>
 				<Route
 					path="/login"
 					render={(props) => (
