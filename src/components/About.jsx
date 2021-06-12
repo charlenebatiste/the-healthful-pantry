@@ -10,15 +10,7 @@ const About = () => {
 			</h1>
 			<div className="about__content mx-5 ">
 				<p className="about__text text-start">
-					Lorem ipsum dolor sit amet
-					consectetur adipisicing elit.
-					Tempore dolorum excepturi,
-					pariatur dolore fuga
-					perferendis mollitia deserunt
-					a voluptas assumenda!
-					Consequatur beatae qui dolorem
-					tempora possimus accusantium,
-					fugit eius quidem?
+				We believe everyone should have access to the resources and education to take back their lives.  Healthful Pantry gives you back the power to control your health on your own terms - skipping the need to see a nutritionist or dietician.  Our goal is to save you money, time, and most importantly your health.  
 				</p>
 			</div>
 		</div>
