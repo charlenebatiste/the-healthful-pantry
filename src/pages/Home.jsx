@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import Testimonial from "../components/Testimonial";
 import HowItWorks from "../components/HowItWorks";
 
-const Home = (props) => {
+const Home = () => {
 	return (
 		<div>
 			<Hero />

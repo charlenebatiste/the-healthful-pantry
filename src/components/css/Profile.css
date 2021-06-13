@@ -1,0 +1,9 @@
+.profile__wrapper {
+	background-image: url("../../img/profile.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.profile__info {
+	background-color: rgba(255, 255, 255, 0.434);
+}
