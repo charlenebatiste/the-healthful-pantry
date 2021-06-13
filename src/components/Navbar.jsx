@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./css/Navbar.css";
+
 const Navbar = (props) => {
 	return (
-		<nav class="navbar navbar-expand-lg navbar-fixed-top">
-			<div class="container-fluid">
+		// <div className="container navContainer">
+		<nav className="navbar navbar-expand-lg navbar-fixed-top">
+			<div className="container-fluid">
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -17,57 +19,44 @@ const Navbar = (props) => {
 					<span class="navbar-toggler-icon "></span>
 				</button>
 				<div
-					class="collapse navbar-collapse"
-					id="navbarNav"
-				>
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
+					className="collapse navbar-collapse" id="navbarNav">
+					<ul className="navbar-nav mr-auto">
+						<li className="nav-item">
 							<NavLink
 								className="nav-link"
-								to="/search"
-							>
-								Search Recipes
+								to="/search">Search Recipes
 							</NavLink>
 						</li>
+						<li className="nav-item">
+							<NavLink
+								className="navbar-brand nav-link"
+								to="/"> Healthful Pantry
+							</NavLink>
+					</li>
 					</ul>
-
-					<NavLink
-						className="navbar-brand nav-link"
-						to="/"
-					>
-						<p>
-							The Healthful Pantry
-						</p>
-					</NavLink>
 
 					{props.isAuth ? (
 						<ul className="navbar-nav ml-auto">
 							{/* <li className="nav-item">
 		                            <NavLink className="nav-link" to="/cart">Shopping Cart</NavLink>
 		                        </li> */}
-							<li className="nav-item">
+							{/* <li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/favorites"
-								>
-									Favorites
+									to="/favorites">Favorites
 								</NavLink>
-							</li>
+							</li> */}
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/profile"
-								>
-									Profile
+									to="/profile">Profile
 								</NavLink>
 							</li>
 							<li className="nav-item">
 								<span
 									onClick={
-										props.handleLogout
-									}
-									className="nav-link logout-link"
-								>
+										props.handleLogout}
+									className="nav-link logout-link">
 									Logout
 								</span>
 							</li>
@@ -77,16 +66,13 @@ const Navbar = (props) => {
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/login"
-								>
-									Login
+									to="/login">Login
 								</NavLink>
 							</li>
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/signup"
-								>
+									to="/signup">
 									Create Account
 								</NavLink>
 							</li>
@@ -95,6 +81,8 @@ const Navbar = (props) => {
 				</div>
 			</div>
 		</nav>
+
+		// </div>
 	);
 };
 
