@@ -1,9 +1,5 @@
 import React from "react";
-import HowItWorks from "./css/HowItWorks.css";
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Montserrat:wght@100&display=swap');
-</style>
+import "./css/HowItWorks.css";
 
 const Steps = () => {
 	return (
@@ -20,7 +16,10 @@ const Steps = () => {
 									Step One
 								</h5>
 								<p class="card-text">
-									Search for recipes by diet or condition.
+									Search for
+									recipes by
+									diet or
+									condition.
 								</p>
 							</div>
 						</div>
@@ -32,7 +31,10 @@ const Steps = () => {
 									Step Two
 								</h5>
 								<p class="card-text">
-									Like the recipe? Save it to your favorites.
+									Like the
+									recipe? Save
+									it to your
+									favorites.
 								</p>
 							</div>
 						</div>
@@ -44,7 +46,10 @@ const Steps = () => {
 									Step Three
 								</h5>
 								<p class="card-text">
-									Print your shopping list and eat your way to health.
+									Print your
+									shopping list
+									and eat your
+									way to health.
 								</p>
 							</div>
 						</div>

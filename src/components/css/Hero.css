@@ -1,7 +1,3 @@
-/* body, html {
-    height: 100%;
-} */
-
 /* The hero image */
 .jumbotron {
 	/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
@@ -22,25 +18,10 @@
 	background-color: #1f4f46;
 	color: white;
 	border-color: #a9c1a9;
-	
 }
 
 .btn:hover {
 	color: #000000;
-    background-color: #a9c1a9;
-    border-color: #1f4f46;
-}
-
-h1{
-	font-family: 'Cormorant Garamond', serif;
-}
-
-body{
-	font-family: 'Cormorant Garamond', serif;
-font-family: 'Montserrat', sans-serif;
-}
-
-.body{
-	font-family: 'Cormorant Garamond', serif;
-font-family: 'Montserrat', sans-serif;
+	background-color: #a9c1a9;
+	border-color: #1f4f46;
 }
