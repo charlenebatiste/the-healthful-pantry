@@ -10,6 +10,7 @@ const Edit = (props) => {
 	const { id, name, email } = props.user;
 	const [redirect, setRedirect] =
 		useState(false);
+	const [destroy, setDestroy] = useState(false);
 	console.log("Edit user props", props.user);
 
 	console.log("props", props);
@@ -53,12 +54,29 @@ const Edit = (props) => {
 	if (redirect)
 		return <Redirect to="/profile" />;
 
-	const handleDelete = (e) => {
+	const handleDelete = async (e) => {
 		e.preventDefault();
 		console.log(
 			`i want to delete this profile`
 		);
+		// const content = {
+		// 	id,
+		// };
+		// let url = `${REACT_APP_SERVER_URL}/api/users/profile/delete`;
+		// await setAuthToken(
+		// 	localStorage.getItem("jwtToken")
+		// );
+		// axios
+		// 	.put(url, content)
+		// 	.then(async (response) => {
+		// 		// console.log(response.data);
+		// 		await setDestroy(true);
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error);
+		// 	});
 	};
+	// if (destroy) return <Redirect to="/login" />;
 
 	return (
 		<div className="container-fluid edit__wrapper">

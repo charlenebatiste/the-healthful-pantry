@@ -1,23 +1,13 @@
 .testimonialHeader {
-    text-align: center;
-    padding-right: 0px;
-    padding: 1%;
+	text-align: center;
+	padding-right: 0px;
+	padding: 1%;
 }
 
-.testDiv{
-background-color: #a9c1a9;
+.testDiv {
+	background-color: #a9c1a9;
 }
 
-p {
-    padding-bottom: 1%;
-    
-}
-
-h1{
-	font-family: 'Cormorant Garamond', serif;
-}
-
-body{
-    font-family: 'Cormorant Garamond', serif;
-font-family: 'Montserrat', sans-serif;
+.text__content {
+	padding-bottom: 1%;
 }

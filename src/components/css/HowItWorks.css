@@ -2,10 +2,9 @@
 	background-color: #f4f3e7;
 }
 
-
-.contHiw{
+.contHiw {
 	align-content: center;
-	padding:1%;
+	padding: 1%;
 }
 
 .hIW {
@@ -13,16 +12,7 @@
 	padding-right: 0px;
 }
 
-.hiwCard{
+.hiwCard {
 	border-color: #a9c1a9;
 	border-width: 20px;
-}
-
-h1{
-	font-family: 'Cormorant Garamond', serif;
-}
-
-body{
-	font-family: 'Cormorant Garamond', serif;
-font-family: 'Montserrat', sans-serif;
 }
