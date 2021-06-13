@@ -1,11 +1,62 @@
 .navbar {
-	background-color: #AF9F8F;
+	background-color: #a9c1a9;
+	padding: 0px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
+/* #navbarNav{
+	padding: 0px;
+	margin-left: 0;
+	margin-right: 0;
+	 justify-content: end;
+	align-content: center;
+	text-align: center;
+} */
+
 .nav-link {
-	color: #1f4f46;
+	color: black;
+}
+
+.nav-link:hover {
+	color: white;
+	background-color:#1f4f46;
 }
 /* hamburger icon svg with colors modified to match color scheme */
 .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(31,79,70, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+	background-image: url("../../img/logo.png");
 }
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  padding: 0px;
+  overflow: hidden;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:#1f4f46;
+  color: white;
+}
+
+/* .navContainer {
+	/* justify-content: end;
+	align-content: center;
+	text-align: center;
+	color: #a9c1a9 */
+	/* margin-right: 0;
+	margin-left: 0;
+	padding: 0;
+} */ 
+
