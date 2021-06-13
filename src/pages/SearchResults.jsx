@@ -1,14 +1,10 @@
 import React from "react";
 import "../components/css/FavoritesCards.css";
-import { Link } from "react-router-dom";
 import {
 	makeStyles,
 	Card,
 	CardHeader,
 	CardMedia,
-	Form,
-	FormControl,
-	Input,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,13 +31,6 @@ const SearchResults = (props) => {
 			key={idx}
 			id={r.id}
 		>
-			{/* <img src={r.image} alt={r.title} />
-			{r.title} */}
-			{/* <Link
-				className="listitem_wrapper"
-				to="/recipe/:id"
-			> */}
-
 			<Card className="singleCard">
 				<CardHeader title={r.title} />
 				<CardMedia
@@ -51,16 +40,14 @@ const SearchResults = (props) => {
 				/>
 				<p>{r.id}</p>
 				<form>
-					<input
+					{/* <button
 						// value={r.id}
-						onclick={handleSubmit}
+						onClick={handleSubmit}
 					>
 						see more
-					</input>
+					</button> */}
 				</form>
 			</Card>
-
-			{/* </Link> */}
 		</div>
 	));
 

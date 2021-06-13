@@ -1,0 +1,17 @@
+.edit__wrapper {
+	background-color: #a9c1a9;
+}
+.edit__form {
+	background-color: #f4f3e7;
+	border-radius: 2em;
+}
+.delete-btn {
+	background-color: #a9c1a9;
+	border: 1px solid #1f4f46;
+	color: #1f4f46;
+}
+
+.delete-btn:hover {
+	background-color: #1f4f46;
+	color: white;
+}

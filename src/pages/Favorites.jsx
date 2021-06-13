@@ -1,13 +1,8 @@
 import React from "react";
-import {
-	makeStyles,
-	Paper,
-	Grid,
-} from "@material-ui/core";
 import FavoritesCards from "../components/FavoritesCards";
 import "../components/css/FavoritesCards.css";
 
-const Favorites = (props) => {
+const Favorites = () => {
 	return (
 		<div>
 			<h1 className="Fav-Header">

@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/FormField.css";
 import {
-	makeStyles,
 	Input,
 	InputLabel,
 	MenuItem,
@@ -10,17 +9,6 @@ import {
 	Select,
 	Checkbox,
 } from "@material-ui/core";
-
-// const useStyles = makeStyles((theme) => ({
-// 	// formControl: {
-// 	// 	margin: theme.spacing(1),
-// 	// 	minWidth: 120,
-// 	// 	maxWidth: 300,
-// 	// },
-// 	noLabel: {
-// 		marginTop: theme.spacing(3),
-// 	},
-// }));
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -36,7 +24,6 @@ const MenuProps = {
 };
 
 const FormField = (props) => {
-	// const classes = useStyles();
 	const {
 		labelId,
 		inputLabelDisplay,
@@ -46,10 +33,7 @@ const FormField = (props) => {
 		option,
 	} = props;
 	return (
-		<FormControl
-			// className={classes.formControl}
-			className="FormControl"
-		>
+		<FormControl className="FormControl">
 			<InputLabel id={labelId}>
 				{inputLabelDisplay}
 			</InputLabel>

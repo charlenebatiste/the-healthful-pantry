@@ -1,4 +1,5 @@
 import React from "react";
+import "../components/css/Profile.css";
 import { Link } from "react-router-dom";
 
 const Profile = (props) => {
@@ -15,19 +16,26 @@ const Profile = (props) => {
 		);
 	}
 	const userData = props.user ? (
-		<div>
-			<h1>Profile</h1>
-			<div className="container">
-				<div className="row">
-					<p className="col-12">
+		<div className="profile__content col-4">
+			<div className="row pb-5">
+				<h1 className="profile__header col-12">
+					<i>Profile</i>
+				</h1>
+				<div className="profile__info py-3 my-3">
+					<p className="col fs-4">
 						<strong>Name:</strong>{" "}
 						{name}
 					</p>
-					<p className="col-12">
+					<p className="col fs-4">
 						<strong>Email:</strong>{" "}
 						{email}
 					</p>
-					<Link to="profile/edit">
+				</div>
+				<div className="edit__link col-6">
+					<Link
+						className="btn"
+						to="profile/edit"
+					>
 						Edit Profile
 					</Link>
 				</div>
@@ -50,7 +58,7 @@ const Profile = (props) => {
 	};
 
 	return (
-		<div>
+		<div className="profile__wrapper container-fluid p-5">
 			{props.user ? userData : errorDiv()}
 		</div>
 	);
