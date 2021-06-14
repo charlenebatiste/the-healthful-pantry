@@ -7,15 +7,16 @@ const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
 
 const Edit = (props) => {
+	// pulling down user info and handleLogout() from App.jsx
 	const { id, name, email } = props.user;
-	// console.log(id);
+	const { handleLogout } = props;
+
+	// set up values and mutators for redirecting user on edit or delete
 	const [redirect, setRedirect] =
 		useState(false);
 	const [destroy, setDestroy] = useState(false);
-	console.log("Edit user props", props.user);
 
-	console.log("props", props);
-
+	// functions to change value of email or name
 	const handleName = (e) => {
 		props.setUser({
 			...props.user,
@@ -29,23 +30,22 @@ const Edit = (props) => {
 			email: e.target.value,
 		});
 	};
-
+	// function to submit edit infomation to backend
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// console.log(newName);
 		const payload = {
 			id,
 			name,
 			email,
 		};
 		let url = `${REACT_APP_SERVER_URL}/api/users/profile/edit`;
+		// passes token to backend to confirm user has access to this function
 		await setAuthToken(
 			localStorage.getItem("jwtToken")
 		);
 		axios
 			.put(url, payload)
 			.then(async (response) => {
-				// console.log(response.data);
 				await setRedirect(true);
 			})
 			.catch((error) => {
@@ -55,11 +55,8 @@ const Edit = (props) => {
 	if (redirect)
 		return <Redirect to="/profile" />;
 
+	// function to submit delete infomation to backend
 	const handleDelete = async (e) => {
-		// console.log(
-		// 	`~~~~~This is the user id ~~~~~`
-		// );
-		// console.log(id);
 		e.preventDefault();
 		const content = {
 			id,
@@ -71,8 +68,9 @@ const Edit = (props) => {
 		axios
 			.delete(url, { data: content })
 			.then(async (response) => {
-				// console.log(response.data);
 				await setDestroy(true);
+				handleLogout();
+				// invokes handleLogout() function so user does not have access to private routes after deleting account
 			})
 			.catch((error) => {
 				console.log(error);
@@ -126,6 +124,7 @@ const Edit = (props) => {
 								handleName(e)
 							}
 							value={name}
+							// autofills the value to current user data so null info is not sent to backend
 						></input>
 					</div>
 					<div className="form-group text-center my-3 fs-5">

@@ -24,6 +24,7 @@ const MenuProps = {
 };
 
 const FormField = (props) => {
+	// imports from Search.jsx
 	const {
 		labelId,
 		inputLabelDisplay,
@@ -44,11 +45,13 @@ const FormField = (props) => {
 				value={selectValue}
 				onChange={selectOnChange}
 				input={<Input />}
+				// renderValue shows all selected items joined into a single array
 				renderValue={(selected) =>
 					selected.join(", ")
 				}
 				MenuProps={MenuProps}
 			>
+				{/* for each data option, this maps through them and displays a menu items with a corresponding checkbox */}
 				{option.map((e) => (
 					<MenuItem key={e} value={e}>
 						<Checkbox

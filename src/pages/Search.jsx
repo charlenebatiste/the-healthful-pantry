@@ -6,6 +6,7 @@ import axios from "axios";
 const REACT_APP_SERVER_URL =
 	process.env.REACT_APP_SERVER_URL;
 
+// const variables to be sent to backend through form
 const intolerances = [
 	"dairy",
 	"egg",
@@ -44,15 +45,20 @@ const conditions = [
 
 const Search = (props) => {
 	const { setAllRecipes } = props;
+	// pulls down setAllRecipes mutator from App.jsx
+
+	// create variables and mutators for form inputs
 	const [userIntolerance, setUserIntolerance] =
 		useState([]);
 	const [userDiet, setUserDiet] = useState([]);
 	const [userCondition, setUserCondition] =
 		useState([]);
 
+	// set redirect variable and mutator to handle user after submit
 	const [redirect, setRedirect] =
 		useState(false);
 
+	// functions to update form data
 	const handleIntolerance = (event) => {
 		setUserIntolerance(event.target.value);
 	};
@@ -63,6 +69,7 @@ const Search = (props) => {
 		setUserCondition(event.target.value);
 	};
 
+	// function to send package of user selections to backend
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const searchParams = {
@@ -70,7 +77,6 @@ const Search = (props) => {
 			userDiet,
 			userCondition,
 		};
-		console.log(searchParams);
 		let url = `${REACT_APP_SERVER_URL}/api/recipe/search`;
 		axios
 			.post(url, searchParams)
@@ -79,16 +85,14 @@ const Search = (props) => {
 				await setAllRecipes(
 					response.data.results
 				);
+				// mutates allRecipes and send data up to App.jsx to be passed to necessary components
 				await setRedirect(true);
-				// console.log(
-				// 	"here is all recipes"
-				// );
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	};
-
+	// sends the user to the results page which renders the response
 	if (redirect)
 		return <Redirect to="/results" />;
 
@@ -116,6 +120,7 @@ const Search = (props) => {
 						onSubmit={handleSubmit}
 					>
 						<div className="form__group my-4">
+							{/* uses FormField component to display form data and passes down necessary functions */}
 							<FormField
 								labelId="intolerance-checkbox-label"
 								inputLabelDisplay="Intolerances"
