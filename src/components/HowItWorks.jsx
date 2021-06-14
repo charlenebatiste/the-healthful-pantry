@@ -7,6 +7,7 @@ import {
 	CardContent,
 } from "@material-ui/core";
 
+
 const Steps = () => {
 	return (
 		<div className="step_section">
