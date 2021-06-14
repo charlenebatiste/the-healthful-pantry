@@ -27,8 +27,9 @@ const Steps = () => {
 					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
+					id="color"
 				>
-					<CardContent className="cardContent">
+					<CardContent className="cardContent" >
 						<div className="img__container p-2">
 							<img
 								className="icon-img"
@@ -42,6 +43,7 @@ const Steps = () => {
 							gutterBottom
 							variant="h5"
 							component="h2"
+							
 						>
 							Step One
 						</Typography>
@@ -49,6 +51,7 @@ const Steps = () => {
 							variant="body2"
 							color="textSecondary"
 							component="p"
+							
 						>
 							Search for recipes by
 							diet or condition.
@@ -60,6 +63,7 @@ const Steps = () => {
 					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
+					id="color"
 				>
 					<CardContent className="cardContent">
 						<div className="img__container p-2">
@@ -93,6 +97,7 @@ const Steps = () => {
 					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
+					id="color"
 				>
 					<CardContent className="cardContent">
 						<div className="img__container p-2">
