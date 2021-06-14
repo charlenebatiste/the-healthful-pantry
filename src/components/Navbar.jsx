@@ -19,24 +19,33 @@ const Navbar = (props) => {
 					<span class="navbar-toggler-icon "></span>
 				</button>
 				<div
-					className="collapse navbar-collapse" id="navbarNav">
-					<ul className="navbar-nav mr-auto">
+					className="collapse navbar-collapse justify-content-between"
+					id="navbarNav"
+				>
+					<ul className="navbar-nav ">
 						<li className="nav-item">
 							<NavLink
 								className="nav-link"
-								to="/search">Search Recipes
+								to="/search"
+							>
+								Search Recipes
 							</NavLink>
 						</li>
+					</ul>
+					<ul className="navbar-nav ">
 						<li className="nav-item">
 							<NavLink
 								className="navbar-brand nav-link"
-								to="/"> Healthful Pantry
+								to="/"
+							>
+								{" "}
+								Healthful Pantry
 							</NavLink>
-					</li>
+						</li>
 					</ul>
 
 					{props.isAuth ? (
-						<ul className="navbar-nav ml-auto">
+						<ul className="navbar-nav ">
 							{/* <li className="nav-item">
 		                            <NavLink className="nav-link" to="/cart">Shopping Cart</NavLink>
 		                        </li> */}
@@ -49,14 +58,18 @@ const Navbar = (props) => {
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/profile">Profile
+									to="/profile"
+								>
+									Profile
 								</NavLink>
 							</li>
 							<li className="nav-item">
 								<span
 									onClick={
-										props.handleLogout}
-									className="nav-link logout-link">
+										props.handleLogout
+									}
+									className="nav-link logout-link"
+								>
 									Logout
 								</span>
 							</li>
@@ -66,13 +79,16 @@ const Navbar = (props) => {
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/login">Login
+									to="/login"
+								>
+									Login
 								</NavLink>
 							</li>
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
-									to="/signup">
+									to="/signup"
+								>
 									Create Account
 								</NavLink>
 							</li>

@@ -25,24 +25,6 @@
 	/* background-image: url("../../img/logo.png"); */
 }
 
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	display: inline;
-	padding: 0px;
-	overflow: hidden;
-}
-
-li a {
-	display: block;
-	color: white;
+li {
 	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-li a:hover {
-	background-color: #1f4f46;
-	color: white;
 }
