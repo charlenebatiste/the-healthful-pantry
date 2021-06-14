@@ -1,4 +1,5 @@
 // Imports
+import "../components/css/Profile.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
@@ -43,7 +44,7 @@ const Login = (props) => {
     if (props.user) return <Redirect to='/profile' />
 
     return (
-        <div className="row mt-4">
+        <div className="profile__wrapper container-fluid">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Login</h2>
