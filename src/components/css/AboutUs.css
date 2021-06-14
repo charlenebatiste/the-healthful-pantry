@@ -1,0 +1,26 @@
+.AU{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color:#e8dcc6;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.Center-Me{
+    align-content: center;
+    justify-content: center;
+}
+
+.linkedin{
+    color: rgb(14, 98, 166);
+  }
+  .github{
+    color:rgb(138, 138, 138);
+    padding-right: 3px;
+  }
+  .github:hover {
+    color: black;
+  }
+  .row{
+    text-align: center;
+  }
