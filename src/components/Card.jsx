@@ -10,7 +10,7 @@ import {
 	Typography,
 } from "@material-ui/core";
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import { FavoriteIcon } from "@material-ui/icons";
 
 import axios from "axios";
 const REACT_APP_SERVER_URL =
@@ -66,11 +66,9 @@ const SearchCard = (props) => {
 						like.
 					</Typography>
 				</CardContent>
-				<CardActions disableSpacing>
-					<IconButton aria-label="add to favorites">
-						<FavoriteIcon />
-					</IconButton>
-				</CardActions>
+				<CardActions
+					disableSpacing
+				></CardActions>
 			</Card>
 		</a>
 	);
