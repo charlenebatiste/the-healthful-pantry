@@ -3,16 +3,24 @@
 ## Table Of Contents
 
 -   [General Info](#general-info)
+-   [Set Up](#set-up)
 -   [User Stories](#user-stories)
 -   [Process Work](#process-work)
 -   [Default Routes](#default-routes)
 -   [Status](#status)
--   [Set Up](#set-up)
+-   [Future Considerations](#future-considerations)
 -   [Technologies Used](#technologies-used)
 
 ## General Info
 
 The Healthful Pantry is a fullstack MERN app that strives to provide users with food allergies, intolerances and restrivcive diets a single place to find recipes that fit their nutritional needs.
+
+## Set Up
+
+1. Fork and Clone this respository to your local machine
+2. Install dependencies and set up your database.
+3. Open the directory in your text editor of choice to view.
+4. Set up a backend database similar to [our backend](https://github.com/ga-avery/healthful-kitchen-backend) or clone that server to run both repos locally.
 
 ## User Stories
 
@@ -32,14 +40,6 @@ The Healthful Pantry is a fullstack MERN app that strives to provide users with 
 ## Status
 
 In Progress 👩🏽‍💻
-
-## Set Up
-
-1. Fork and Clone this respository to your local machine
-2. Install dependencies and set up your database.
-3. Open the directory in your text editor of choice to view or edit the code.
-4. Fork and Clone the back-end repository at |-->ENTER LINK HERE<--| and follow the set up instructions. Make sure the back-end server is running to effectively use this front-end code.
-5. Run npm start in your terminal to view this code in your local port.
 
 ## Technologies Used
 

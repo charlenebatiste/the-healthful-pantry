@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 
 import axios from "axios";
 const REACT_APP_SERVER_URL =
@@ -70,9 +69,6 @@ const SearchCard = (props) => {
 				<CardActions disableSpacing>
 					<IconButton aria-label="add to favorites">
 						<FavoriteIcon />
-					</IconButton>
-					<IconButton aria-label="share">
-						<ShareIcon />
 					</IconButton>
 				</CardActions>
 			</Card>
