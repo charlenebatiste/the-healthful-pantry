@@ -17,12 +17,7 @@ const Testimonial = () => {
 					<div className="carousel-item active">
 						<blockquote className="blockquote text-center">
 							<p className="text__content mb-0">
-								Lorem ipsum dolor
-								sit amet,
-								consectetur
-								adipiscing elit.
-								Integer posuere
-								erat a ante.
+								Amazing!
 							</p>
 							<footer className="blockquote-footer">
 								Software Engineer{" "}
