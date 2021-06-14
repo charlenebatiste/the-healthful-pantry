@@ -1,12 +1,19 @@
 /* Centered text */
-.container {
+.NFP {
 	display: flex;
 	align-items: center;
+	background-color: #F4F3E7;
+	padding: 5% 0% 5% 25% ;
 }
 
-.text-center {
+/* .text-center {
 	align-items: center;
+	padding-left: 10%;
+} */
+
+
+
+.imgContainer{
+
 }
-.icon-image {
-	width: 100%;
-}
+
