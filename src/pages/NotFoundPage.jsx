@@ -5,7 +5,9 @@ import "../components/css/NotFoundPage.css";
 
 const NotFoundPage = () => {
 	return (
-		<div className="container my-4">
+		<div className="container-fluid NFP">
+		<div class="row">
+			<div className="col-sm imgContainer">
 			<img
 				className="img-responsive"
 				width="304"
@@ -13,7 +15,8 @@ const NotFoundPage = () => {
 				src={PageNotFound}
 				alt="shocked little girl"
 			/>
-			<div className="text-center">
+			</div>
+			<div className="col-sm">
 				<h1>Sorry!</h1> <br />
 				<p>This page isn't working</p>
 				<br />
@@ -24,6 +27,7 @@ const NotFoundPage = () => {
 				>
 					<Link to="/">Go to Home</Link>
 				</p>
+			</div>
 			</div>
 		</div>
 	);
