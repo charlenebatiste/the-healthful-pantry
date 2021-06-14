@@ -10,30 +10,32 @@ import {
 } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
+
 // CSS
 import "./App.css";
+
 // Components
 import Navbar from "./components/Navbar";
-
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
+
 // Pages
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import Profile from "./pages/Profile";
 import Favorites from "./pages/Favorites";
 import SearchResults from "./pages/SearchResults";
 import Details from "./pages/Details";
 import Edit from "./pages/Edit";
 
-// Private route component
+// PrivateRoute Component
 const PrivateRoute = ({
 	component: Component,
 	...rest
 }) => {
-	console.log("This is a private route...");
+	// will check if a user has a jwtToken and if not will redirect them to the login page
 	let user = localStorage.getItem("jwtToken");
 
 	return (
@@ -59,7 +61,6 @@ function App() {
 		useState("");
 	const [isAuthenticated, setIsAuthenticated] =
 		useState(true);
-
 	const [allRecipes, setAllRecipes] = useState(
 		[]
 	);
@@ -87,10 +88,9 @@ function App() {
 	}, []);
 
 	const nowCurrentUser = (userData) => {
-		console.log(
-			"--- inside nowCurrentUser ---"
-		);
-		console.log(userData);
+		// console.log(
+		// 	"--- inside nowCurrentUser ---"
+		// );
 		setCurrentUser(userData);
 		setIsAuthenticated(true);
 	};
