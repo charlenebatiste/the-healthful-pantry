@@ -1,12 +1,20 @@
 .step_section {
-	background-color: #FBFCFE;
+	background-color: #f4f3e7;
 }
 
-.hIW {
-	padding-top: 2%;
-	padding-right: 0px;
+.gridContainer {
+	background-color: transparent;
 }
 
 .cardItem {
 	text-align: center;
+	margin: 2em 3em;
+}
+
+.cardContent {
+	background-color: #e8dcc6;
+	min-height: 20vh;
+}
+.cardText {
+	font-family: "Montserrat", sans-serif;
 }
