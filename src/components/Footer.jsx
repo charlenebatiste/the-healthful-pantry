@@ -1,14 +1,14 @@
 import React from "react";
 import "./css/Footer.css";
+import AboutUs from "../components/AboutUs"
 
 const Footer = () => {
 	return (
 		<footer className="footer__wrapper p-3 ">
 			<div className="container footer__content justify-content-center">
 				<span className="text-muted">
-					@2021 Built by Avery Wood,
-					Amanda Posey, Brianna Giorgi
-					and Charlene Batiste
+					@2021 Built by Amanda Posey, Avery Wood, Charlene Batiste, and Brianna Giorgi
+					<AboutUs/>
 				</span>
 			</div>
 		</footer>

@@ -100,10 +100,10 @@ const Search = (props) => {
 		<div className="search__container container-fluid">
 			<div className="search__wrapper row">
 				<div className="search__heading col mt-5 mb-2">
-					<h1 className="heading__header text-center m-3">
+					<h1 className="heading__header text-center m-1">
 						Search Recipes
 					</h1>
-					<p className="heading__info text-center m-3">
+					<p className="heading__info text-center m-1">
 						<em>
 							Please select all that
 							apply so that we can
@@ -114,7 +114,7 @@ const Search = (props) => {
 				</div>
 			</div>
 			<div className="search__content row d-flex justify-content-center">
-				<div className="card col-8 my-5">
+				<div className="card col-8 my-3">
 					<form
 						className="form__wrapper text-center my-4"
 						onSubmit={handleSubmit}
