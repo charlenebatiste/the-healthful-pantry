@@ -8,6 +8,7 @@
 -   [User Stories](#user-stories)
 -   [Process Work](#process-work)
 -   [Status](#status)
+-   [Team](#team)
 
 ## General Info
 
@@ -28,6 +29,7 @@ The Healthful Pantry is a fullstack MERN app that strives to provide users with 
 -   Bootstrap
 -   Express
 -   Axios
+-   NodeJS
 
 ## User Stories
 
@@ -60,8 +62,39 @@ The Healthful Pantry is a fullstack MERN app that strives to provide users with 
 
 Due to the vast amounts if data received by the Spoonacular API, the backend handles all calls to the API and sends the return data to the frontend for rendering without saving any data unless expressly requested by the user. This required certain variables be set at the root level to then be passed up and down the app as required.
 
-An example of this can be seen in App.jsx where the variable allRecipes and its mutator setAllRecipes() are defined and their state set to an empty array before being passed down to the Search.jsx component.
+An example of this can be seen in App.jsx where the variable allRecipes and its mutator setAllRecipes() are defined and their state set to an empty array before being passed down to the Search.jsx component. After the inputs for each user restriction are set a handleSubmit() function mutates the allRecipes and sends that back up to App.jsx to be passed the the necessary components.
+
+```javascript React
+const handleSubmit = async (e) => {
+	e.preventDefault();
+	const searchParams = {
+		userIntolerance,
+		userDiet,
+		userCondition,
+	};
+	let url = `${REACT_APP_SERVER_URL}/api/recipe/search`;
+	axios
+		.post(url, searchParams)
+		.then(async (response) => {
+			await setAllRecipes(
+				response.data.results
+			);
+			// mutates allRecipes and send data up to App.jsx to be passed to necessary components
+			await setRedirect(true);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+};
+```
 
 ## Status
 
 In Progress 👩🏽‍💻
+
+## Team
+
+-   [Charlene Batiste](https://github.com/charlenebatiste) - Front-End Developer
+-   [Brianna Giorgi](https://github.com/bgiorgi1) - Front-End Developer
+-   [Amanda Posey](https://github.com/amanda-posey) - Back-End Developer
+-   [Avery Wood](https://github.com/ga-avery) - Back-End Developer
