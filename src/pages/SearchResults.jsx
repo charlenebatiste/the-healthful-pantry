@@ -1,13 +1,17 @@
 import React from "react";
-import "../components/css/FavoritesCards.css";
+import "../components/css/SearchResults.css";
 import {
+	Grid,
 	makeStyles,
 	Card,
 	CardHeader,
 	CardMedia,
 } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
+	root: {
+		flexGrow: 1,
+	},
 	media: {
 		height: 0,
 		paddingTop: "56.25%", // 16:9
@@ -16,50 +20,53 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchResults = (props) => {
 	const classes = useStyles();
-	// console.log(props);
 	const recipes = props.allRecipes;
 	console.log(recipes);
-	const handleSubmit = (r) => {
-		console.log(
-			`you want to see recipe id ${r.id}`
-		);
-	};
+	// const handleSubmit = (r) => {
+	// 	console.log(
+	// 		`you want to see recipe id ${r.id}`
+	// 	);
+	// };
 
 	let recipeList = recipes.map((r, idx) => (
-		<div
-			className="col-4"
+		<Grid
+			item
+			component={Card}
 			key={idx}
 			id={r.id}
+			xs={4}
+			spacing={3}
 		>
-			<Card className="singleCard">
-				<CardHeader title={r.title} />
-				<CardMedia
-					className={classes.media}
-					image={r.image}
-					title={r.title}
-				/>
-				<p>{r.id}</p>
-				<form>
-					{/* <button
+			<CardHeader title={r.title} />
+			<CardMedia
+				className={classes.media}
+				image={r.image}
+				title={r.title}
+			/>
+			<form>
+				{/* <button
 						// value={r.id}
 						onClick={handleSubmit}
 					>
 						see more
 					</button> */}
-				</form>
-			</Card>
-		</div>
+			</form>
+		</Grid>
 	));
 
 	return (
-		<div>
-			<h1 className="Fav-Header">
+		<div className="results__container pb-3 px-3">
+			<h1 className="search__header p-4 text-center">
 				Search Results
 			</h1>
-			<div className="container">
-				<div className="row recipe__wrapper">
+			<div className={classes.root}>
+				<Grid
+					container
+					spacing={1}
+					alignItems="stretch"
+				>
 					{recipeList}
-				</div>
+				</Grid>
 			</div>
 		</div>
 	);
