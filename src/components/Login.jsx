@@ -56,7 +56,7 @@ const Login = (props) => {
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" />
-                        </div>
+                        </div><br/>
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>

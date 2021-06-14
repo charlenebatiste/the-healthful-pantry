@@ -31,12 +31,7 @@ const Testimonial = () => {
 					<div className="carousel-item">
 						<blockquote className="blockquote text-center">
 							<p className="text__content mb-0">
-								Lorem ipsum dolor
-								sit amet,
-								consectetur
-								adipiscing elit.
-								Integer posuere
-								erat a ante.
+								I have used this.
 							</p>
 							<footer className="blockquote-footer">
 								Software Engineer{" "}
@@ -49,12 +44,7 @@ const Testimonial = () => {
 					<div className="carousel-item">
 						<blockquote className="blockquote text-center">
 							<p className="text__content mb-0">
-								Lorem ipsum dolor
-								sit amet,
-								consectetur
-								adipiscing elit.
-								Integer posuere
-								erat a ante.
+								It works! 
 							</p>
 							<footer className="blockquote-footer">
 								Software Engineer{" "}
@@ -67,12 +57,7 @@ const Testimonial = () => {
 					<div className="carousel-item">
 						<blockquote className="blockquote text-center">
 							<p className="text__content mb-0">
-								Lorem ipsum dolor
-								sit amet,
-								consectetur
-								adipiscing elit.
-								Integer posuere
-								erat a ante.
+								Lots of potential!
 							</p>
 							<footer className="blockquote-footer">
 								Software Engineer{" "}
