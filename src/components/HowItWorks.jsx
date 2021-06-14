@@ -24,7 +24,7 @@ const Steps = () => {
 			>
 				<Grid
 					item
-					className="cardItem"
+					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
 				>
@@ -57,7 +57,7 @@ const Steps = () => {
 				</Grid>
 				<Grid
 					item
-					className="cardItem"
+					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
 				>
@@ -90,7 +90,7 @@ const Steps = () => {
 				</Grid>
 				<Grid
 					item
-					className="cardItem"
+					className="cardItem my-2 mx-4"
 					component={Card}
 					xs
 				>

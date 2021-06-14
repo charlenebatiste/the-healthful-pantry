@@ -2,18 +2,11 @@
 .NFP {
 	display: flex;
 	align-items: center;
-	background-color: #F4F3E7;
-	padding: 5% 0% 5% 25% ;
+	background-color: #f4f3e7;
+	padding: 5% 0% 5% 25%;
 }
 
 /* .text-center {
 	align-items: center;
 	padding-left: 10%;
 } */
-
-
-
-.imgContainer{
-
-}
-
