@@ -43,14 +43,12 @@ const SearchResults = (props) => {
 				image={r.image}
 				title={r.title}
 			/>
-			<form>
-				{/* <button
+			{/* <button
 						// value={r.id}
 						onClick={handleSubmit}
 					>
 						see more
 					</button> */}
-			</form>
 		</Grid>
 	));
 

@@ -1,4 +1,4 @@
-# The Healthful Pantry!
+# The Healthful Pantry
 
 ## Table Of Contents
 
@@ -7,6 +7,7 @@
 -   [Technologies Used](#technologies-used)
 -   [User Stories](#user-stories)
 -   [Process Work](#process-work)
+-   [How It Works](#how-it-works)
 -   [Status](#status)
 -   [Team](#team)
 
@@ -57,6 +58,55 @@ The Healthful Pantry is a fullstack MERN app that strives to provide users with 
 #### Details Page Wireframe
 
 ![Details Page Screenshot](/src/img/detailspg-screenshot.png)
+
+## How It Works
+
+### Testimonials Carousel
+
+Carousel Content Example
+
+```javascript
+<div
+				id="carouselExampleControls"
+				className="carousel slide"
+				data-bs-ride="carousel"
+			>
+				<div className="carousel-inner">
+					<div className="carousel-item">
+						<blockquote className="blockquote text-center">
+							<p className="text__content mb-0">
+								I have used this.
+							</p>
+							<footer className="blockquote-footer">
+								Software Engineer{" "}
+								<cite title="Source Title">
+									Avery Wood
+								</cite>
+							</footer>
+						</blockquote>
+					</div>
+
+				</div>
+```
+
+Carousel Button Example
+
+```javascript
+<button
+	className="carousel-control-prev"
+	type="button"
+	data-bs-target="#carouselExampleControls"
+	data-bs-slide="prev"
+>
+	<span
+		className="carousel-control-prev-icon"
+		aria-hidden="true"
+	></span>
+	<span className="visually-hidden">
+		Previous
+	</span>
+</button>
+```
 
 ## Known Issues
 
